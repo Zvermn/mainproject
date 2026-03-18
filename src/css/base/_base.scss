@@ -1,0 +1,10 @@
+html{
+    background-color: $background-color;
+}
+.container {
+    max-width: 480px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
