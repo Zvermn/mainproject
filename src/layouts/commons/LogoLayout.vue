@@ -1,11 +1,10 @@
-
 <template>
   <div class="container">
-    <div class="logo-img"><img src="../../assets/images/logo.png" alt=""></div> 
-   <router-view />
+    <div class="logo-img">
+      <img src="../../assets/images/logo.png" alt="" />
+    </div>
+    <router-view />
   </div>
-  
-  
 </template>
 
 <style lang="scss">
@@ -14,4 +13,3 @@
   height: 100%;
 }
 </style>
-

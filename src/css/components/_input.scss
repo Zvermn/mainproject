@@ -1,0 +1,57 @@
+@use '../abstractions/' as *;
+
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+
+  label {
+    @include body-3b;
+  }
+
+  .login-phone-msg {
+    @include caption-1;
+    color: $font-error;
+  }
+}
+
+.input-tel {
+
+  border: 1px solid $brd-primary-light;
+
+}
+
+.input-field-wrap {
+  padding: 10px 20px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: $surface-color;
+  border-radius: $brd-radius-md;
+  border-color: $brd-primary-default;
+
+  input {
+    width: 100%;
+    border: 0;
+    @include body-2;
+  }
+}
+
+.icon-tel {
+  align-self: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background-color: $primary-color;
+  mask: url(../../assets/icons/tel-md.svg) no-repeat 50%;
+}
+
+.icon-tel-right {
+  align-self: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background-color: $font-error;
+  mask: url(../../assets/icons/exclamation-point.svg) no-repeat 50%;
+}

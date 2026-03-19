@@ -1,39 +1,46 @@
 @use "sass:math";
-$base-brown-300: #F6CBBA; //! new
-$base-brown-500: #E29578; //! new
-$base-brown-700: #D08467; //! new
-$base-gray-100: #E5E5E5; //! new
-$base-gray-300: #B5B5B5; //! new
-$base-gray-500: #939393; //! new
-$base-black: #2D2522; //! new
+$base-brown-300: #F6CBBA;
+$base-brown-500: #E29578;
+$base-brown-700: #D08467;
+$base-gray-100: #E5E5E5;
+$base-gray-300: #B5B5B5;
+$base-gray-500: #939393;
+$base-black: #2D2522;
 
 
 $primary-color: #E29578;
 $secondary-color: #FBE5C8;
-$third-color: #FEB8B4; //! new
-$success-color: #A2D9CE; //!new
+$third-color: #FEB8B4;
+$success-color: #A2D9CE;
 
+$background-color: #FFF2DE;
+$surface-color: #FFFFFF;
+$surface-error-color: #FFEBE9;
 
-$primary-bdr-default: #D08467; //! new
-$primary-bdr-light: #F6CBBA; //! new
-$error-brd-color: #CE655A; //!new
-$success-brd-color: #A2D9CE; //!new
+$brd-primary-default: #D08467;
+$brd-primary-light: #F6CBBA;
+$brd-error-color: #CE655A;
+$brd-success-color: #A2D9CE;
 
-$background-color: #FFF2DE; //! new
-$surface-color: #FFFFFF; //!new
-$surface-error-color: #FFEBE9; //!new
+$font-primary-color: #2D2522;
+$font-secondary-color: #939393;
+$font-brown: #D08467;
+$font-placeholder: #B5B5B5;
+$font-link: #1091E0;
+$font-error: #F67769;
 
+$icon-dark-color: #2D2522;
+$icon-gray-color: #939393;
+$icon-light-color: #FFFFFF;
 
-$primary-font-color: #2D2522;
-$secondary-font-color: #939393;
-$font-brown: #D08467; //! new
-$font-placeholder: #B5B5B5; //!new
-$font-link: #1091E0; //! new
-$font-error: #F67769; //! new
+$btn-inactive-color: #B5B5B5;
+$btn-hover-color: #D08467;
 
-$icon-dark-color: #2D2522; //!new
-$icon-gray-color: #939393; //!new
-$icon-light-color: #FFFFFF; //!new
+$brd-radius-sm: 8px;
+$brd-radius-md: 12px;
+$brd-radius-lg: 20px;
 
-$btn-inactive-color: #B5B5B5; //!new
-$btn-hover-color: #D08467; //!new
+$brd-primary-full: 1px solid $brd-primary-default;
+$icon-width: 35px;
+$icon-height: 35px;
+$brd-width: 1px;

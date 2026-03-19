@@ -1,5 +1,5 @@
 <template>
-  <button class="btn-primary">
+  <div class="card">
     <slot name="content"></slot>
-  </button>
+  </div>
 </template>

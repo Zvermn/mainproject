@@ -1,10 +1,18 @@
-html{
-    background-color: $background-color;
+@use '../abstractions/' as *;
+
+html {
+  background-color: $background-color;
 }
+
 .container {
-    max-width: 480px;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+  max-width: 480px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+a {
+  color: $font-link;
 }

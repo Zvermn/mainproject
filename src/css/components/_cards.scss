@@ -1,0 +1,11 @@
+@use '../abstractions/' as *;
+
+.card {
+    background-color: $surface-color;
+    border-color: $brd-primary-light;
+    border-style: solid;
+    border-width: 1px;
+    padding: 20px;
+    @include body-2;
+    border-radius: $brd-radius-lg;
+}
