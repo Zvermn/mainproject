@@ -1,5 +1,0 @@
-<template>
-  <button class="btn-primary">
-    <slot name="content"></slot>
-  </button>
-</template>

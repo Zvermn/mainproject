@@ -16,3 +16,25 @@ html {
 a {
   color: $font-link;
 }
+
+.icon-size-sm {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+.icon-size-lg {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+.icon-arrow-left-lg {
+  mask: url(../../assets/icons/large/ArrowLeft.svg);
+}
+
+.icon-arrow-right-lg {
+  mask: url(../../assets/icons/large/ArrowRight.svg);
+}

@@ -2,14 +2,14 @@
 
 // Главный заголовок экрана
 @mixin head-1 {
-  font-family: 'Nunito';
+  font-family: $heading-1;
   font-size: 24px;
   font-weight: bold;
 }
 
 // Заголовки секций
 @mixin head-2 {
-  font-family: 'Nunito';
+  font-family: $heading-1;
   font-size: 20px;
   line-height: 22;
   font-weight: bold;
@@ -17,62 +17,62 @@
 
 // Основной наборный текст
 @mixin body-2 {
-  font-family: "Manrope";
+  font-family: $heading-2;
   font-size: 16px;
   font-weight: normal;
 }
 
 // Жирный основной наборный текст
 @mixin body-2b {
-  font-family: "Manrope";
+  font-family: $heading-2;
   font-size: 16px;
   font-weight: bold;
 }
 
 // Второстепенный текст, подсказки
 @mixin body-3 {
-  font-family: "Manrope";
+  font-family: $heading-2;
   font-size: 14px;
   font-weight: 500;
 }
 
 // Жирный второстепенный текст, подсказки
 @mixin body-3b {
-  font-family: "Manrope";
+  font-family: $heading-2;
   font-size: 14px;
   font-weight: bold;
 }
 
 // Кнопки, инпуты, описание
 @mixin label-1 {
-  font-family: "Manrope";
+  font-family: $heading-2;
   font-size: 20px;
   font-weight: 600;
 }
 
 @mixin label-2 {
-  font-family: "Nunito";
+  font-family: $heading-1;
   font-size: 18px;
   font-weight: 500;
 }
 
 // Мелкий текст, подписи
 @mixin caption-1 {
-  font-family: "Manrope";
+  font-family: $heading-2;
   font-size: 13px;
   font-weight: normal;
 }
 
 // Жирный мелкий текст, подписи
 @mixin caption-bold {
-  font-family: "Manrope";
+  font-family: $heading-2;
   font-size: 12px;
   font-weight: 800;
 }
 
 // Мелкий текст, подписи
 @mixin caption-2 {
-  font-family: "Manrope";
+  font-family: $heading-2;
   font-size: 11px;
   font-weight: normal;
 }
@@ -86,26 +86,29 @@
 
 
 // buttons prymary large
-@mixin btnLg-primary-default {
+
+@mixin btn-base-lg {
   width: 100%;
-  background-color: $primary-color;
-  border-radius: $brd-radius-md;
-  border-color: $primary-color;
-  border-width: 1px;
-  padding: 12px 40px;
+  padding: $unit*5 40px;
   @include label-2;
-  color: white;
 }
 
-@mixin btnLg-primary-iconR {}
+@mixin btnLg-primary-default {
+  @include btn-base-lg;
+  color: white;
+  background-color: $primary-color;
+  border-radius: $brd-radius-md;
+  border-color: $brd-primary-color-default;
+  border-width: $brd-width-default;
+}
 
-@mixin btnLg-primary-iconL {}
+@mixin btn-nav {
+  background-color: $primary-color;
+  border-radius: $brd-radius-md;
+  border-color: $brd-primary-color-default;
+  border-width: $brd-width-default;
+}
 
-@mixin btnLg-primary-default-hv {}
-
-@mixin btnLg-primary-iconR-hv {}
-
-@mixin btnLg-primary-iconL-hv {}
 
 @mixin btnLg-primary-default-nAct {}
 

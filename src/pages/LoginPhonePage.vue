@@ -1,13 +1,20 @@
 <script setup>
-import InputComponent from 'components/InputComponent.vue'
-import InputComponentCheckBox from 'src/components/InputComponentCheckBox.vue'
-import ButtonComponent from 'src/components/ButtonComponent.vue'
+import PhoneInputComponent from 'src/components/form/PhoneInputComponent.vue'
+import InputComponentCheckBox from 'src/components/form/InputComponentCheckBox.vue'
+import ButtonComponent from 'src/components/buttons/ButtonComponent.vue'
 </script>
 
 <template>
-  <input-component />
+  <phone-input-component :label="'Введите номер телефона для входа'"/>
   <input-component-check-box />
-  <button-component>
-    <template #content>Продолжить</template>
-  </button-component>
+  <button-component
+    :icon-position="'left'"
+    :title="'Вернуться'"
+    :to-path="'/'"
+  />
+  <button-component
+    :icon-position="'right'"
+    :title="'Продолжить'"
+  />
 </template>
+

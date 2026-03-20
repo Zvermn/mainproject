@@ -1,11 +1,7 @@
 <script setup>
-import ButtonComponent from 'src/components/ButtonComponent.vue'
+import ButtonComponent from 'src/components/buttons/ButtonComponent.vue'
 </script>
 
 <template>
-  <button-component>
-    <template #content>
-      <router-link to="/login">Продолжить</router-link>
-    </template>
-  </button-component>
+  <button-component :title="'Продолжить'" :to-path="'/login'"/>
 </template>

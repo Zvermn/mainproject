@@ -1,14 +1,33 @@
 @use '../abstractions/' as *;
 
 .btn-primary {
-    @include btnLg-primary-default;
-    box-shadow: -0px 13px 11.8px -6px #E7AB8C;
+  @include btnLg-primary-default;
+  box-shadow: -0px 13px 11.8px -6px #E7AB8C;
 
-    a {
-        color: inherit;
-    }
+  a {
+    color: inherit;
+  }
 }
 
 .btn-primary:hover {
-    background-color: $btn-hover-color;
+  background-color: $btn-hover-color;
+}
+
+.icon-right *:first-child {
+  position: relative;
+}
+
+.icon-left *:first-child {
+  position: relative;
+}
+
+.arrow-right *:first-child::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  top: 10px;
+  right: -20px;
+  position: absolute;
+  background-color: $icon-light-color;
+  mask: url(../../assets/icons/arrow-right-md.svg) no-repeat 50%;
 }

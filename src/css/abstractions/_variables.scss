@@ -1,4 +1,11 @@
 @use "sass:math";
+// units
+$unit: 1px;
+$unit-x2: $unit*2;
+$unit-x10: $unit*10;
+$unit-x20: $unit*20;
+
+// цветовая гамма
 $base-brown-300: #F6CBBA;
 $base-brown-500: #E29578;
 $base-brown-700: #D08467;
@@ -17,8 +24,8 @@ $background-color: #FFF2DE;
 $surface-color: #FFFFFF;
 $surface-error-color: #FFEBE9;
 
-$brd-primary-default: #D08467;
-$brd-primary-light: #F6CBBA;
+$brd-primary-color-default: #D08467;
+$brd-primary-color-light: #F6CBBA;
 $brd-error-color: #CE655A;
 $brd-success-color: #A2D9CE;
 
@@ -36,11 +43,24 @@ $icon-light-color: #FFFFFF;
 $btn-inactive-color: #B5B5B5;
 $btn-hover-color: #D08467;
 
+// borders
+
 $brd-radius-sm: 8px;
 $brd-radius-md: 12px;
 $brd-radius-lg: 20px;
 
-$brd-primary-full: 1px solid $brd-primary-default;
+$brd-width-default: 1px;
+$brd-width-md: 2px;
+$brd-width-lg: 3px;
+$brd-style-default: solid;
+$brd-primary-default: $brd-width-default $brd-style-default $brd-primary-color-default;
+
+//icons
+
 $icon-width: 35px;
 $icon-height: 35px;
-$brd-width: 1px;
+
+// fonts-family
+
+$heading-1: 'Nunito';
+$heading-2: 'Manrope';
