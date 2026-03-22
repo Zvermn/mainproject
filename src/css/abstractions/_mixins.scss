@@ -11,8 +11,9 @@
 @mixin head-2 {
   font-family: $heading-1;
   font-size: 20px;
-  line-height: 22;
+  line-height: 1.2;
   font-weight: bold;
+  margin-bottom: 16px;
 }
 
 // Основной наборный текст
@@ -89,35 +90,25 @@
 
 @mixin btn-base-lg {
   width: 100%;
-  padding: $unit*5 40px;
+  padding: $unit*4 20px;
   @include label-2;
+  min-height: 50px;
 }
 
-@mixin btnLg-primary-default {
+@mixin btn-lg-primary-default {
   @include btn-base-lg;
   color: white;
   background-color: $primary-color;
   border-radius: $brd-radius-md;
   border-color: $brd-primary-color-default;
   border-width: $brd-width-default;
+  border-style: $brd-style-default;
 }
 
-@mixin btn-nav {
-  background-color: $primary-color;
+@mixin btn-lg-primary-outlined {
+  @include btn-base-lg;
+  color: $font-error;
   border-radius: $brd-radius-md;
-  border-color: $brd-primary-color-default;
+  border-color: $brd-error-color;
   border-width: $brd-width-default;
 }
-
-
-@mixin btnLg-primary-default-nAct {}
-
-@mixin btnLg-primary-iconR-nAct {}
-
-@mixin btnLg-primary-iconL-nAct {}
-
-@mixin btnLg-primary-default-err {}
-
-@mixin btnLg-primary-iconR-err {}
-
-@mixin btnLg-primary-iconL-err {}

@@ -1,6 +1,8 @@
 <script setup>
 import ErrorHintComponent from './ErrorHintComponent.vue'
+import IconComponent from '../IconComponent.vue'
 import { ref } from 'vue'
+
 
 const props = defineProps({
   label: {
@@ -11,33 +13,44 @@ const props = defineProps({
 })
 
 let errorPhone = ref(false);
-let numberPhone = ref();
+let errorMsg = ref(false);
+let numberPhone = ref('');
 
-function inputPhone() {
-  if (numberPhone.value.length !== 11) {
-    errorPhone.value = true;
-  } else {
-    errorPhone.value = false;
-  }
-};
 </script>
 
 <template>
-  <div :class="{ error: errorPhone }" class="input-wrap">
+  <div class="input-wrap">
     <label for="login-phone">{{ props.label }}</label>
-    <div class="input-field-wrap">
-      <div class="input-field-icon-left"></div>
-      <input
-      v-model="numberPhone"
-      type="tel"
-      id="login-phone"
-      class="input-tel"
-      autocomplete="tel-national"
-      @input="inputPhone"
+    <div :class="{ error: errorPhone, correct: numberPhone.length == 11} " class="input-field-wrap">
+      <icon-component
+        class="input-icon-left"
+        :size="'lg'"
+        :color="'primary'"
+        :icon-name="'phone'"
       />
-      <div class="input-field-icon-right"></div>
+      <input
+        v-model="numberPhone"
+        type="tel"
+        id="login-phone"
+        class="input-tel"
+        autocomplete="tel-national"
+        maxlength="11"
+        @input="inputPhone"
+      />
+      <icon-component v-if="!errorPhone"
+        class="input-icon-right"
+        :size="'lg'"
+        :color="''"
+        :icon-name="''"
+      />
+      <icon-component v-if="numberPhone.length == 11"
+        class="input-icon-right"
+        :size="'lg'"
+        :color="'success'"
+        :icon-name="'check-big'"
+      />
     </div>
-    <error-hint-component v-if="errorPhone" :msg="'Ведите номер телефона чтобы продолжить'" />
+    <error-hint-component v-if="errorMsg" :msg="'Ведите номер телефона чтобы продолжить'" />
   </div>
 </template>
 
@@ -55,7 +68,7 @@ function inputPhone() {
 }
 
 .input-field-wrap {
-  padding: $unit-x10 $unit-x20 $unit-x10 $unit-x10;
+  padding: calc($unit-x2*2) $unit-x10;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -71,33 +84,21 @@ function inputPhone() {
   }
 }
 
-.input-field-icon-left {
-  align-self: center;
-  flex-shrink: 0;
-  width: 30px;
-  height: 30px;
-  background-color: $primary-color;
-  mask: url(../../assets/icons/tel-md.svg) no-repeat 50%;
+.input-field-wrap{
+  div {
+    align-self: center;
+    flex-shrink: 0;
+  }
 }
 
-.input-field-icon-right {
-  display: none;
-  align-self: center;
-  flex-shrink: 0;
-  width: 30px;
-  height: 30px;
-  background-color: $font-error;
-  mask: url(../../assets/icons/exclamation-point.svg) no-repeat 50%;
-}
-
-.error.input-wrap {
-  .input-field-icon-right {
-    display: block;
+.correct.input-field-wrap {
+    border-color: $brd-success-color;
+    border-width: $brd-width-default;
   }
 
-  .input-field-wrap {
-    border-color: $brd-error-color;
+.error.input-field-wrap {
+  border-color: $brd-error-color;
     border-width: $brd-width-md;
   }
-}
+
 </style>

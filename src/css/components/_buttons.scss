@@ -1,7 +1,7 @@
 @use '../abstractions/' as *;
 
 .btn-primary {
-  @include btnLg-primary-default;
+  @include btn-lg-primary-default;
   box-shadow: -0px 13px 11.8px -6px #E7AB8C;
 
   a {
@@ -13,21 +13,46 @@
   background-color: $btn-hover-color;
 }
 
-.icon-right *:first-child {
-  position: relative;
-}
+.btn-secondary {
+  width: 100%;
+  padding: $unit*4 20px;
+  @include label-2;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: $unit-x20;
+  justify-content: center;
+  align-items: center;
+  color: $base-brown-700;
+  border-radius: $brd-radius-md;
+  border-color: $base-brown-700;
+  border-width: $brd-width-default;
+  border-style: $brd-style-default;
+  background-color: transparent;
+  box-sizing: border-box;
 
-.icon-left *:first-child {
-  position: relative;
-}
+  &:hover {
+    background-color: $primary-surface-color;
+  }
 
-.arrow-right *:first-child::after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  top: 10px;
-  right: -20px;
-  position: absolute;
-  background-color: $icon-light-color;
-  mask: url(../../assets/icons/arrow-right-md.svg) no-repeat 50%;
+  &.inactive {
+    background-color: $base-gray-100;
+    color: $font-secondary-color;
+    border-color: $btn-inactive-color;
+    border-width: $brd-width-default;
+    border-style: $brd-style-default;
+  }
+
+  &.destructive {
+    background-color: $base-gray-100;
+    color: $font-error;
+    border-color: $brd-error-color;
+    border-width: $brd-width-default;
+    border-style: $brd-style-default;
+
+  }
+
+  div {
+    flex-basis: 40px;
+  }
 }

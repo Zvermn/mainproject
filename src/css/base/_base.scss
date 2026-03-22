@@ -17,24 +17,178 @@ a {
   color: $font-link;
 }
 
-.icon-size-sm {
+h1 {
+  @include head-1
+}
+
+h2 {
+  @include head-2
+}
+
+// Основной наборный текст
+.body-2 {
+  font-family: $heading-2;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+// Жирный основной наборный текст
+.body-2b {
+  font-family: $heading-2;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+// Второстепенный текст, подсказки
+.body-3 {
+  font-family: $heading-2;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+// Жирный второстепенный текст, подсказки
+.body-3b {
+  font-family: $heading-2;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+// Кнопки, инпуты, описание
+.label-1 {
+  font-family: $heading-2;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.label-2 {
+  font-family: $heading-1;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+// Мелкий текст, подписи
+.caption-1 {
+  font-family: $heading-2;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+// Жирный мелкий текст, подписи
+.caption-bold {
+  font-family: $heading-2;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+// Мелкий текст, подписи
+.caption-2 {
+  font-family: $heading-2;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+// позиционирование текста
+
+.text-centr {
+  text-align: center;
+}
+
+// обертки иконок
+
+.icon-block-size-sm {
   width: 30px;
   height: 30px;
   background-repeat: no-repeat;
   background-color: transparent;
 }
 
-.icon-size-lg {
+.icon-block-size-lg {
   width: 40px;
   height: 40px;
   background-repeat: no-repeat;
   background-color: transparent;
 }
 
+//цвет для иконок
+
+.bg-icon-primary {
+  background-color: $primary-color;
+}
+
+.bg-icon-dark {
+  background-color: $icon-dark-color;
+}
+
+.bg-icon-gray {
+  background-color: $icon-gray-color;
+}
+
+.bg-icon-light {
+  background-color: $icon-light-color;
+}
+
+.bg-icon-success {
+  background-color: $icon-success-color;
+}
+
+.bg-icon-error {
+  background-color: $icon-error-color;
+}
+
+//иконки парное обозначение (большая, маленькая)
+
 .icon-arrow-left-lg {
   mask: url(../../assets/icons/large/ArrowLeft.svg);
 }
 
+.icon-arrow-left-sm {
+  mask: url(../../assets/icons/small/ArrowLeft.svg);
+}
+
 .icon-arrow-right-lg {
   mask: url(../../assets/icons/large/ArrowRight.svg);
+}
+
+.icon-arrow-right-sm {
+  mask: url(../../assets/icons/small/ArrowRight.svg);
+}
+
+.icon-phone-lg {
+  mask: url(../../assets/icons/large/Phone.svg);
+}
+
+.icon-phone-sm {
+  mask: url(../../assets/icons/small/Phone.svg);
+}
+
+.icon-circle-warning-lg {
+  mask: url(../../assets/icons/large/Circle_Warning.svg);
+}
+
+.icon-circle-warning-sm {
+  mask: url(../../assets/icons/small/Circle_Warning.svg);
+}
+
+.icon-check-big-lg {
+  mask: url(../../assets/icons/large/Check_Big.svg);
+}
+
+.icon-check-big-sm {
+  mask: url(../../assets/icons/small/Check_Big.svg);
+}
+
+.icon-checkbox-check-lg {
+  mask: url(../../assets/icons/large/Checkbox_Check.svg);
+}
+
+.icon-checkbox-check-sm {
+  mask: url(../../assets/icons/small/Checkbox_Check.svg);
+}
+
+.icon-checkbox-uncheck-lg {
+  mask: url(../../assets/icons/large/Checkbox_Unchecked.svg);
+}
+
+.icon-checkbox-uncheck-sm {
+  mask: url(../../assets/icons/small/Checkbox_Unchecked.svg);
 }

@@ -1,5 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import IconComponent from '../IconComponent.vue'
+
 const router = useRouter();
 
 const props = defineProps({
@@ -18,6 +20,17 @@ const props = defineProps({
     required: false,
     default: null,
   },
+  iconColor: {
+    type: String,
+    default: '',
+    required: false,
+  },
+  iconName: {
+    type: String,
+    default: '',
+    required: false,
+  },
+
 });
 
 function redirect() {
@@ -30,13 +43,23 @@ function redirect() {
 </script>
 
 <template>
-  <button class="btn-primary" @click="redirect()">
-    <div class="icon-wrap icon-size-lg">
-      <div v-if="props.iconPosition =='left'" class="icon-arrow-left-lg"></div>
+  <button @click="redirect()">
+    <div v-if="props.iconPosition">
+      <icon-component
+        v-if="props.iconPosition =='left'"
+        :size="'lg'"
+        :color="props.iconColor"
+        :icon-name="props.iconName"
+      />
     </div>
     <span>{{ props.title }}</span>
-    <div class="icon-wrap icon-size-lg">
-      <div v-if="props.iconPosition =='right'" class="icon-arrow-right-lg"></div>
+    <div v-if="props.iconPosition">
+      <icon-component
+        v-if="props.iconPosition =='right'"
+        :size="'lg'"
+        :color="props.iconColor"
+        :icon-name="props.iconName"
+      />
     </div>
   </button>
 </template>
@@ -47,12 +70,11 @@ function redirect() {
 .btn-primary {
   display: flex;
   flex-direction: row;
-  gap: $unit-x10;
+  gap: $unit-x20;
   justify-content: center;
   align-items: center;
-    .icon-wrap div {
-      min-height: 100%;
-      background-color: $icon-light-color;
+     div {
+      flex-basis: 40px;
   }
 }
 </style>
