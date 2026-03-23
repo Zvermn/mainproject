@@ -1,8 +1,13 @@
 <script setup>
-
+import CardComponent from 'src/components/CardComponent.vue';
 </script>
 
 <template>
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora et ab voluptatum ipsam dicta harum quis consequatur esse incidunt doloremque, excepturi repellat architecto laboriosam quidem facilis necessitatibus voluptate ut nesciunt?</p>
+  <CardComponent>
+    <template #content>
+      <p>На ваш телефон +7 965 046 75 64 было отправлено СМС с кодом. Введите его в поле ниже:</p>
+    </template>
+  </CardComponent>
+
 </template>
 

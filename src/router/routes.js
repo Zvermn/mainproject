@@ -11,7 +11,7 @@ const routes = [
   },
   {
     path: '/auth-sms',
-    component: () => import('layouts/commons/LogoLayout.vue'),
+    component: () => import('layouts/commons/LogoLayoutSms.vue'),
     children: [{ path: '', component: () => import('pages/AuthSmsPage.vue') }],
   },
 
