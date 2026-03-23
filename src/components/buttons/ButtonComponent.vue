@@ -65,16 +65,6 @@ function redirect() {
 </template>
 
 <style lang="scss">
-@use '../../css/abstractions/' as *;
 
-.btn-primary {
-  display: flex;
-  flex-direction: row;
-  gap: $unit-x20;
-  justify-content: center;
-  align-items: center;
-     div {
-      flex-basis: 40px;
-  }
-}
+
 </style>

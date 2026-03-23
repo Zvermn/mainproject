@@ -1,3 +1,5 @@
+@use '../abstractions/variables' as *;
+
 @font-face {
     font-family: 'Manrope';
     src: url('..//fonts/Manrope/Manrope-Regular.eot');
@@ -19,6 +21,7 @@
     font-weight: 500;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Manrope';
     src: url('..//fonts/Manrope/Manrope-Bold.eot');

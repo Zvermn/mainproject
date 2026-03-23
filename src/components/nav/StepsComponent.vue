@@ -5,16 +5,6 @@ import IconComponent from '../IconComponent.vue'
 const router = useRouter();
 
 const props = defineProps({
-  iconPosition: {
-    type: String,
-    required: false,
-    default: null,
-  },
-  title: {
-    type: String,
-    required: false,
-    default: 'Нажми',
-  },
   toPath: {
     type: String,
     required: false,
@@ -43,34 +33,36 @@ function redirect() {
 </script>
 
 <template>
-  <button @click="redirect()">
-    <div v-if="props.iconPosition">
-      <icon-component
-        v-if="props.iconPosition =='left'"
-        :size="'lg'"
-        :color="props.iconColor"
-        :icon-name="props.iconName"
-      />
+  <div class="step-wrap">
+     <button @click="redirect()" class="btn-nav">
+      <div>
+        <icon-component
+          :size="'lg'"
+          :color="'light'"
+          :icon-name="'arrow-left'"
+        />
+      </div>
+    </button>
+    <div class="step-content">
+      <slot name="step-content"></slot>
     </div>
-    <span>{{ props.title }}</span>
-  </button>
-  <div class="steps-content">
-    <h2></h2>
-    <p></p>
+
   </div>
 </template>
 
 <style lang="scss">
 @use '../../css/abstractions/' as *;
-
-.btn-primary {
+.step-wrap {
   display: flex;
   flex-direction: row;
-  gap: $unit-x20;
-  justify-content: center;
+  gap: $space-16;
   align-items: center;
-     div {
-      flex-basis: 40px;
+}
+
+.step-wrap{
+  h2{
+    margin-bottom: 0;
   }
 }
+
 </style>

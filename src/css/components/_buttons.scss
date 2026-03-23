@@ -1,17 +1,38 @@
 @use '../abstractions/' as *;
 
 .btn-primary {
-  @include btn-lg-primary-default;
+  width: 100%;
+  padding: $unit*4 20px;
+  @include label-2;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: $unit-x20;
+  justify-content: center;
+  align-items: center;
+
+
+  border-radius: $brd-radius-md;
+  border-color: $brd-primary-color-default;
+  border-width: $brd-width-default;
+  border-style: $brd-style-default;
+  background-color: $primary-color;
+  color: white;
   box-shadow: -0px 13px 11.8px -6px #E7AB8C;
+
+  &:hover {
+    background-color: $btn-hover-color;
+  }
+
+  div {
+    flex-basis: 40px;
+  }
 
   a {
     color: inherit;
   }
 }
 
-.btn-primary:hover {
-  background-color: $btn-hover-color;
-}
 
 .btn-secondary {
   width: 100%;
@@ -23,13 +44,13 @@
   gap: $unit-x20;
   justify-content: center;
   align-items: center;
-  color: $base-brown-700;
+
   border-radius: $brd-radius-md;
   border-color: $base-brown-700;
   border-width: $brd-width-default;
   border-style: $brd-style-default;
   background-color: transparent;
-  box-sizing: border-box;
+  color: $base-brown-700;
 
   &:hover {
     background-color: $primary-surface-color;
@@ -55,4 +76,16 @@
   div {
     flex-basis: 40px;
   }
+}
+
+.btn-nav {
+  width: 50px;
+  height: 50px;
+  padding: $unit*5;
+  border-radius: $brd-radius-md;
+  border-color: $brd-primary-color-default;
+  border-width: $brd-width-default;
+  border-style: $brd-style-default;
+  background-color: $primary-color;
+
 }

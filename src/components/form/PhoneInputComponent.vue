@@ -23,7 +23,6 @@ let numberPhone = ref('');
     <label for="login-phone">{{ props.label }}</label>
     <div :class="{ error: errorPhone, correct: numberPhone.length == 11} " class="input-field-wrap">
       <icon-component
-        class="input-icon-left"
         :size="'lg'"
         :color="'primary'"
         :icon-name="'phone'"
@@ -38,13 +37,11 @@ let numberPhone = ref('');
         @input="inputPhone"
       />
       <icon-component v-if="!errorPhone"
-        class="input-icon-right"
         :size="'lg'"
         :color="''"
         :icon-name="''"
       />
       <icon-component v-if="numberPhone.length == 11"
-        class="input-icon-right"
         :size="'lg'"
         :color="'success'"
         :icon-name="'check-big'"
