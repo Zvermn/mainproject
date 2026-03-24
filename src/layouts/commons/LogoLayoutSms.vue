@@ -11,18 +11,11 @@ import StepsComponent from 'src/components/nav/StepsComponent.vue';
         <span>Шаг </span><span>1 </span><span>из </span><span>3</span>
       </template>
     </steps-component>
-    <div class="logo-img">
+    <div class="logo-img-wrap">
       <img src="../../assets/images/logo.png" alt="" />
     </div>
     <router-view />
   </div>
 </template>
 
-
-<style lang="scss">
-.logo-img {
-  width: 100%;
-  height: 100%;
-}
-</style>
 

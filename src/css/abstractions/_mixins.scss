@@ -1,32 +1,5 @@
 @use './variables' as *;
 
-// buttons prymary large
-
-@mixin btn-base-lg {
-  width: 100%;
-  padding: $unit*4 20px;
-  @include label-2;
-  min-height: 50px;
-}
-
-@mixin btn-lg-primary-default {
-  @include btn-base-lg;
-  color: white;
-  background-color: $primary-color;
-  border-radius: $brd-radius-md;
-  border-color: $brd-primary-color-default;
-  border-width: $brd-width-default;
-  border-style: $brd-style-default;
-}
-
-@mixin btn-lg-primary-outlined {
-  @include btn-base-lg;
-  color: $font-error;
-  border-radius: $brd-radius-md;
-  border-color: $brd-error-color;
-  border-width: $brd-width-default;
-}
-
 // Главный заголовок экрана
 @mixin head-1 {
   font-family: $heading-1;
@@ -40,7 +13,7 @@
   font-size: 20px;
   line-height: 1.2;
   font-weight: bold;
-  margin-bottom: 16px;
+
 }
 
 // Основной наборный текст
