@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import IconComponent from '../IconComponent.vue'
-
+// Кнопка работает в двух режимах: роутер, если указали ссылку (:toPath), и по событию, если указали @click
 const router = useRouter();
 
 const props = defineProps({

@@ -9,3 +9,12 @@
     @include body-2;
     border-radius: $brd-radius-lg;
 }
+
+.block-text-area {
+    background-color: $surface-color;
+    border-color: $brd-primary-color-light;
+    border-style: $brd-style-default;
+    border-width: $brd-width-default;
+    @include body-2;
+    border-radius: $brd-radius-lg;
+}

@@ -13,7 +13,8 @@ const inputs = ref([]);
 
 // Вычисляем: все ли поля заполнены?
 const allFilled = computed(() => filled.value.every(Boolean));
-
+// Событие завершения ввода
+const emit = defineEmits(['complete']);
 // Обработчик ввода
 const handleInput = (e, index) => {
   const input = e.target;
@@ -33,6 +34,7 @@ const handleInput = (e, index) => {
 // Если все поля заполнены — включаем состояние проверки
   if (allFilled.value) {
     isChecking.value = true;
+    emit('complete'); // Отправляем событие
     // Здесь можно вызвать API для проверки кода
     // checkCode();
   }
