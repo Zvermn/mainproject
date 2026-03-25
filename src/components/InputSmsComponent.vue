@@ -119,21 +119,22 @@ const handleInput = (e, index) => {
   gap: $space-8;
 
   input {
-    width: $unit-x20 * 2;
-    height: $unit-x20 * 2;
+    width: $space_40;
+    height: $space_40;
     text-align: center;
     @include head-2;
-    border-style: $brd-style-default;
-    border-width: $brd-width-default;
-    border-color: $brd-primary-color-light;
-    background-color: $surface-color;
-    border-radius: $brd-radius-md;
+    border-style: solid;
+    border-width: $width_default;
+    border-color: $color_textField_border_disabled;
+    background-color: $color_textField_surface;
+    border-radius: $radius_12;
 
     &.filled {
-      border-color: $base-gray-100;
+      border-color: $color_textField_border_primary_light;
     }
     &.checking {
-      background-color: $base-gray-100;
+      border-color: $color_textField_border_disabled;
+      background-color: $color_textField_border_disabled;
     }
   }
 }
@@ -144,10 +145,10 @@ const handleInput = (e, index) => {
   align-items: center;
   p{
     @include  body-3;
-    color: $font-secondary-color;
+    color: $color_text_secondary;
   }
   .verification-process{
-    color: $font-primary-color;
+    color: $color_text_black;
   }
 }
 

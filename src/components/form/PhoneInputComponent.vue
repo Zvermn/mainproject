@@ -65,15 +65,15 @@ let numberPhone = ref('');
 }
 
 .input-field-wrap {
-  padding: calc($unit-x2*2) $unit-x10;
+  padding: $space_4 $space_10;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  background-color: $surface-color;
-  border-radius: $brd-radius-md;
-  border-width: $brd-width-default;
-  border-style: $brd-style-default;
-  border-color: $brd-primary-color-light;
+  background-color: $color_textField_surface;
+  border-radius: $radius_12;
+  border-width: $width_default;
+  border-style: solid;
+  border-color: $color_primary_border_light;
   input {
     width: 100%;
     border: 0;
@@ -89,13 +89,13 @@ let numberPhone = ref('');
 }
 
 .correct.input-field-wrap {
-    border-color: $brd-success-color;
-    border-width: $brd-width-default;
+    border-color: $color_success_border;
+    border-width: $width_default;
   }
 
 .error.input-field-wrap {
-  border-color: $brd-error-color;
-    border-width: $brd-width-md;
+  border-color: $color_error_border;
+    border-width: $width_md;
   }
 
 </style>

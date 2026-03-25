@@ -1,5 +1,5 @@
 // обертки иконок
-@use '../abstractions/variables' as *;
+@use '../abstractions/' as *;
 
 .icon-block-size-sm {
     width: 30px;
@@ -18,27 +18,27 @@
 //цвет для иконок
 
 .bg-icon-primary {
-    background-color: $primary-color;
+    background-color: $color_icon_primary;
 }
 
 .bg-icon-dark {
-    background-color: $icon-dark-color;
+    background-color: $color_icon_dark;
 }
 
 .bg-icon-gray {
-    background-color: $icon-gray-color;
+    background-color: $color_icon_gray;
 }
 
 .bg-icon-light {
-    background-color: $icon-light-color;
+    background-color: $color_icon_light;
 }
 
 .bg-icon-success {
-    background-color: $icon-success-color;
+    background-color: $color_icon_success;
 }
 
 .bg-icon-error {
-    background-color: $icon-error-color;
+    background-color: $color_icon_error;
 }
 
 //иконки парное обозначение (большая, маленькая)

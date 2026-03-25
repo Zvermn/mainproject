@@ -24,7 +24,12 @@ import ToogleComponent from 'src/components/ToogleComponent.vue';
     <template #content>
       <h2>Права доступа:</h2>
       <p>Выберите разделы, которые будут доступны заместителю:</p>
-      <toogle-component/>
+      <toogle-component
+      :title="'Верификация групп'"
+      />
+      <toogle-component
+      :title="'Раздел с финансами'"
+      />
     </template>
   </CardComponent>
   <ButtonComponent

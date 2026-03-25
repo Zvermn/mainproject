@@ -60,11 +60,11 @@ const iconName = computed(() => {
 }
 //оформление надписи
 .input-check-text span:first-child {
-  color: $font-primary-color;
+  color: $color_text_primary;
 }
 
 .input-check-text {
   @include body-2;
-  color: $font-link;
+  color: $color_text_link;
 }
 </style>

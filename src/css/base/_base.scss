@@ -14,11 +14,11 @@ html {
   justify-content: flex-start;
   gap: 24px;
   margin: 0 auto;
-  background-color: $background-color;
+  background-color: $color_background;
 }
 
 a {
-  color: $font-link;
+  color: $color_text_link;
 }
 
 h1 {

@@ -35,6 +35,9 @@ const toggle = () => {
   flex-direction: row;
   justify-content: space-between;
   cursor: pointer;
+  p{
+    @include body-2b;
+  }
 
 }
 .toggle-wrap {
@@ -46,9 +49,9 @@ const toggle = () => {
   justify-content: center;
   flex-shrink: 0;
   border-radius: 15px;
-  background-color: $base-gray-100;
+  background-color: $color_toggle_inactive_surface;
   &.active {
-  background-color: $primary-color;
+  background-color: $color_toggle_surface;
 
   }
 }
@@ -56,11 +59,11 @@ const toggle = () => {
 .toggle-track {
   width: 39px;
   height: 2px;
-  background-color: $base-gray-300;
+  background-color: $color_toggle_inactive_onSurface;
   border-radius: 1px;
   z-index: 1;
   &.active {
-    background-color: $base-brown-700;
+    background-color: $color_toggle_onSurface;
   }
 }
 
@@ -69,20 +72,21 @@ const toggle = () => {
   z-index: 2;
   width: 26px;
   height: 26px;
-  background-color: $surface-color;
+  background-color: $color_toggle_inactive_pusher;
   border-radius: 50%;
   transition: transform 0.3s ease, background-color 0.3s ease;
   // Начальная позиция — слева
   transform: translateX(-14px); // (26/2) - (60-39)/2 ≈ 14px от центра track
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 0px 12.5px -3px rgba(0, 0, 0, 0.45);
 
   &.active {
     transform: translateX(14px); // вправо на 28px относительно начальной
+    background-color: $color_toggle_pusher;
+    box-shadow: -4px 0px 12.5px -3px rgba(0, 0, 0, 0.45);
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px fade-out($primary-color, 0.7);
   }
 }
 </style>

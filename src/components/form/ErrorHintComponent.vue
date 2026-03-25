@@ -17,6 +17,6 @@ const props = defineProps({
 
 .error-msg {
   @include caption-1;
-  color: $font-error;
+  color: $color_text_error;
 }
 </style>

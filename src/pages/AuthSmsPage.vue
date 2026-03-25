@@ -20,7 +20,7 @@ watch(isCodeFilled, (newValue) => {
     // Запускаем отсчёт 3 секунды
     timer = setTimeout(() => {
       router.push('/auth-director-1'); // или куда нужно
-    }, 3000);
+    }, 9000);
   }
 });
 

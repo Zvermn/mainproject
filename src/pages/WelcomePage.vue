@@ -71,7 +71,7 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 @use '../css/abstractions/' as *;
   .slogan-greeting {
-    color: $font-brown;
+    color: $color_text_primary;
     text-align: center;
   }
 // Анимация для <transition name="fade">
@@ -88,13 +88,13 @@ onUnmounted(() => {
 }
 
 .loading-msg {
-  color: $font-brown;
+  color: $color_text_primary;
   text-align: center;
 }
 
 .progress-bar-container{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: $space_10;
 }
 </style>

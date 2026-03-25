@@ -2,26 +2,26 @@
 
 .btn-primary {
   width: 100%;
-  padding: $unit*4 20px;
+  padding: $space_4 $space_20;
   @include label-2;
   min-height: 50px;
   display: flex;
   flex-direction: row;
-  gap: $unit-x20;
+  gap: $space_20;
   justify-content: center;
   align-items: center;
 
 
-  border-radius: $brd-radius-md;
-  border-color: $brd-primary-color-default;
-  border-width: $brd-width-default;
-  border-style: $brd-style-default;
-  background-color: $primary-color;
-  color: white;
-  box-shadow: -0px 13px 11.8px -6px #E7AB8C;
+  border-radius: $radius_button_large;
+  border-color: $color_button_primary_border;
+  border-width: $width_default;
+  border-style: solid;
+  background-color: $color_button_primary;
+  color: $color_text_white;
+  box-shadow: -0px 13px 11.8px -6px $color_button_primary;
 
   &:hover {
-    background-color: $btn-hover-color;
+    background-color: $color_button_primary_hover;
   }
 
   div {
@@ -36,40 +36,40 @@
 
 .btn-secondary {
   width: 100%;
-  padding: $unit*4 20px;
+  padding: $space_4 $space_20;
   @include label-2;
   min-height: 50px;
   display: flex;
   flex-direction: row;
-  gap: $unit-x20;
+  gap: $space_20;
   justify-content: center;
   align-items: center;
 
-  border-radius: $brd-radius-md;
-  border-color: $base-brown-700;
-  border-width: $brd-width-default;
-  border-style: $brd-style-default;
+  border-radius: $radius_button_large;
+  border-color: $color_button_secondary_border;
+  border-width: $width_default;
+  border-style: solid;
   background-color: transparent;
-  color: $base-brown-700;
+  color: $color_text_primary;
 
   &:hover {
-    background-color: $primary-surface-color;
+    background-color: $color_button_secondary_hover;
   }
 
   &.inactive {
-    background-color: $base-gray-100;
-    color: $font-secondary-color;
-    border-color: $btn-inactive-color;
-    border-width: $brd-width-default;
-    border-style: $brd-style-default;
+    background-color: $color_button_inactive;
+    color: $color_text_secondary;
+    border-color: $color_button_inactive;
+    border-width: $width_default;
+    border-style: solid;
   }
 
   &.destructive {
-    background-color: $base-gray-100;
-    color: $font-error;
-    border-color: $brd-error-color;
-    border-width: $brd-width-default;
-    border-style: $brd-style-default;
+    background-color: transparent;
+    color: $color_text_error;
+    border-color: $color_button_destructive_border;
+    border-width: $width_md;
+    border-style: solid;
 
   }
 
@@ -81,11 +81,11 @@
 .btn-nav {
   width: 50px;
   height: 50px;
-  padding: $unit*5;
-  border-radius: $brd-radius-md;
-  border-color: $brd-primary-color-default;
-  border-width: $brd-width-default;
-  border-style: $brd-style-default;
-  background-color: $primary-color;
+  padding: 5px;
+  border-radius: $radius_button_large;
+  border-color: $color_button_primary_border;
+  border-width: $width_default;
+  border-style: solid;
+  background-color: $color_button_primary;
 
 }
