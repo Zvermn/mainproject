@@ -1,28 +1,28 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/commons/LogoLayout.vue'),
-    children: [{ path: '', component: () => import('pages/WelcomePage.vue') }],
+    component: () => import('layouts/commons/logoLayout.vue'),
+    children: [{ path: '', component: () => import('pages/welcomePage.vue') }],
   },
   {
-    path: '/auth-phone',
-    component: () => import('layouts/commons/LogoLayout.vue'),
-    children: [{ path: '', component: () => import('pages/AuthPhonePage.vue') }],
+    path: '/auth/phone',
+    component: () => import('layouts/commons/logoLayout.vue'),
+    children: [{ path: '', component: () => import('pages/auth/authPhonePage.vue') }],
   },
   {
     path: '/auth-sms',
     component: () => import('layouts/commons/LogoLayoutSms.vue'),
-    children: [{ path: '', component: () => import('pages/AuthSmsPage.vue') }],
+    children: [{ path: '', component: () => import('pages/auth/authSmsPage.vue') }],
   },
   {
-    path: '/auth-director-1',
+    path: '/director/registration-steps/verification',
     component: () => import('layouts/commons/AuthEmptyLayout.vue'),
-    children: [{ path: '', component: () => import('pages/AuthDirectorPage-1.vue') }],
+    children: [{ path: '', component: () => import('pages/director/registration-steps/directorVerificationDataPage.vue') }],
   },
   {
     path: '/auth-director-2',
     component: () => import('layouts/commons/AuthEmptyLayout.vue'),
-    children: [{ path: '', component: () => import('pages/AuthDirectorPage-2.vue') }],
+    children: [{ path: '', component: () => import('pages/director/directorAssistentInvitePage.vue') }],
   },
   {
     path: '/error-director',
