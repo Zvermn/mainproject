@@ -15,7 +15,8 @@
     "postinstall": "quasar prepare",
     "dev:pwa": "quasar dev -m pwa",
     "build:pwa": "quasar build -m pwa",
-    "preview:pwa": "npx --yes serve dist/pwa -l 4000"
+    "preview:pwa": "npx --yes serve dist/pwa -l 4000",
+    "start:pwa": "lsof -i :4000 | grep LISTEN | awk '{print $2}' | xargs kill -9 2>/dev/null || true && npm run preview:pwa"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
