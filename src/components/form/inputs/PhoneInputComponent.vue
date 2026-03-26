@@ -3,25 +3,35 @@ import ErrorHintComponent from '../ErrorHintComponent.vue'
 import IconComponent from '../../commons/IconComponent.vue'
 import { ref } from 'vue'
 
-
 const props = defineProps({
-  label: {
-    type: String,
-    default: 'Введите номер телефона',
-    required: false,
-  },
+	label: {
+		type: String,
+		default: 'Введите номер телефона',
+		required: false,
+	},
 })
 
-let errorPhone = ref(false);
-let errorMsg = ref(false);
-let numberPhone = ref('');
+const errorPhone = ref(false)
+const errorMsg = ref(false)
+const numberPhone = ref('')
 
+function inputPhone () {
+	errorMsg.value = false
+	errorPhone.value = numberPhone.value.length > 0 && numberPhone.value.length < 11
+}
+
+defineExpose({
+	getDigits: () => numberPhone.value,
+})
 </script>
 
 <template>
   <div class="input-wrap">
     <label for="login-phone">{{ props.label }}</label>
-    <div :class="{ error: errorPhone, correct: numberPhone.length == 11} " class="input-field-wrap">
+    <div
+      :class="{ error: errorPhone, correct: numberPhone.length == 11 }"
+      class="input-field-wrap"
+    >
       <icon-component
         :size="'lg'"
         :color="'primary'"
@@ -36,12 +46,14 @@ let numberPhone = ref('');
         maxlength="11"
         @input="inputPhone"
       />
-      <icon-component v-if="!errorPhone"
+      <icon-component
+        v-if="!errorPhone"
         :size="'lg'"
         :color="''"
         :icon-name="''"
       />
-      <icon-component v-if="numberPhone.length == 11"
+      <icon-component
+        v-if="numberPhone.length == 11"
         :size="'lg'"
         :color="'success'"
         :icon-name="'check-big'"

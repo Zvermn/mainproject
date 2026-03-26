@@ -74,6 +74,16 @@ export default defineConfig((/* ctx */) => {
     devServer: {
       // https: true,
       open: true, // opens browser window automatically
+      // PWA в браузере → тот же origin, что и dev-server; запросы к ERP без CORS/DNS в браузере.
+      // Цель — машина, где крутится `npm run dev` (в WSL должен резолвиться erp.local).
+      proxy: {
+        '/erp-api': {
+          target: 'http://erp.local',
+          changeOrigin: true,
+          secure: false,
+          rewrite: (path) => path.replace(/^\/erp-api/, ''),
+        },
+      },
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework
@@ -91,7 +101,7 @@ export default defineConfig((/* ctx */) => {
       // directives: [],
 
       // Quasar plugins
-      plugins: [],
+      plugins: ['Notify'],
     },
 
     // animations: 'all', // --- includes all animations

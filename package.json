@@ -14,6 +14,7 @@
     "build": "quasar build",
     "postinstall": "quasar prepare",
     "dev:pwa": "quasar dev -m pwa",
+    "dev:pwa:clean": "lsof -i :9200 | grep LISTEN | awk '{print $2}' | xargs kill -9 2>/dev/null || true && npm run dev:pwa",
     "build:pwa": "quasar build -m pwa",
     "preview:pwa": "npx --yes serve dist/pwa -l 4000",
     "start:pwa": "lsof -i :4000 | grep LISTEN | awk '{print $2}' | xargs kill -9 2>/dev/null || true && npm run preview:pwa"

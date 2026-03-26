@@ -4,6 +4,8 @@ import IconComponent from '../commons/IconComponent.vue'
 // Кнопка работает в двух режимах: роутер, если указали ссылку (:toPath), и по событию, если указали @click
 const router = useRouter();
 
+const emit = defineEmits(['click'])
+
 const props = defineProps({
   iconPosition: {
     type: String,
@@ -33,17 +35,25 @@ const props = defineProps({
 
 });
 
-function redirect() {
-  if (props.toPath) {
-    router.push({
-      path: props.toPath,
-    });
-  }
-};
+function redirect () {
+	if (props.toPath) {
+		router.push({
+			path: props.toPath,
+		})
+	}
+}
+
+function handleClick () {
+	emit('click', undefined)
+	redirect()
+}
 </script>
 
 <template>
-  <button @click="redirect()">
+  <button
+    type="button"
+    @click="handleClick"
+  >
     <div v-if="props.iconPosition">
       <icon-component
         v-if="props.iconPosition =='left'"

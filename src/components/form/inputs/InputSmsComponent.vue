@@ -1,101 +1,110 @@
 <script setup>
-import ErrorHintComponent from '../ErrorHintComponent.vue';
-import { ref, computed } from 'vue';
+import ErrorHintComponent from '../ErrorHintComponent.vue'
+import { ref, computed } from 'vue'
 
-// Массив состояний заполненности
-const filled = ref([false, false, false, false]);
+const props = defineProps({
+	digitCount: {
+		type: Number,
+		default: 6,
+	},
+})
 
-// Состояние "идёт проверка"
-const isChecking = ref(false);
+const filled = ref(Array(props.digitCount).fill(false))
+const inputs = ref([])
+const isChecking = ref(false)
+const invalidAttempt = ref(false)
 
-// Массив для хранения ссылок на DOM-элементы
-const inputs = ref([]);
+const emit = defineEmits(['complete'])
 
-// Вычисляем: все ли поля заполнены?
-const allFilled = computed(() => filled.value.every(Boolean));
-// Событие завершения ввода
-const emit = defineEmits(['complete']);
-// Обработчик ввода
-const handleInput = (e, index) => {
-  const input = e.target;
-  const value = input.value.replace(/\D/g, '');
-  input.value = value;
-  filled.value[index] = !!value;
+const allFilled = computed(() => filled.value.every(Boolean))
 
-  // Вперёд — если ввели цифру
-  if (value && index < 3) {
-    inputs.value[index + 1]?.focus();
-  }
+function getCodeFromInputs () {
+	return inputs.value
+		.map((el) => String(el?.value || '').replace(/\D/g, ''))
+		.join('')
+}
 
-  // Назад — если удалили и поле пустое
-  if (!value && index > 0) {
-    inputs.value[index - 1]?.focus();
-  }
-// Если все поля заполнены — включаем состояние проверки
-  if (allFilled.value) {
-    isChecking.value = true;
-    emit('complete'); // Отправляем событие
-    // Здесь можно вызвать API для проверки кода
-    // checkCode();
-  }
+function handleInput (e, index) {
+	invalidAttempt.value = false
+	const input = e.target
+	const value = input.value.replace(/\D/g, '')
+	input.value = value.slice(0, 1)
+	filled.value[index] = !!value
 
-};
+	if (value && index < props.digitCount - 1) {
+		inputs.value[index + 1]?.focus()
+	}
+
+	if (!value && index > 0) {
+		inputs.value[index - 1]?.focus()
+	}
+
+	if (filled.value.every(Boolean)) {
+		isChecking.value = true
+		const code = getCodeFromInputs()
+		if (code.length === props.digitCount) {
+			emit('complete', code)
+		}
+	}
+}
+
+defineExpose({
+	reset: () => {
+		invalidAttempt.value = false
+		filled.value = Array(props.digitCount).fill(false)
+		isChecking.value = false
+		inputs.value.forEach((el) => {
+			if (el) el.value = ''
+		})
+		inputs.value[0]?.focus()
+	},
+	markInvalid: () => {
+		invalidAttempt.value = true
+		isChecking.value = false
+	},
+})
 </script>
 
 <template>
   <div class="input-sms-wrap">
     <p class="input-sms-label">Введите код из СМС:</p>
     <div class="input-field">
-        <input
-        :ref="(el) => inputs[0] = el"
-        :class="{ filled: filled[0], checking: isChecking }"
-        inputmode="numeric"
-        maxlength="1"
-        @input="(e) => handleInput(e, 0)"
-      />
       <input
-        :ref="(el) => inputs[1] = el"
-        :class="{ filled: filled[1], checking: isChecking }"
+        v-for="i in digitCount"
+        :key="i"
+        :ref="(el) => { inputs[i - 1] = el }"
+        :class="{ filled: filled[i - 1], checking: isChecking }"
         inputmode="numeric"
         maxlength="1"
-        @input="(e) => handleInput(e, 1)"
-      />
-      <input
-        :ref="(el) => inputs[2] = el"
-        :class="{ filled: filled[2], checking: isChecking }"
-        inputmode="numeric"
-        maxlength="1"
-        @input="(e) => handleInput(e, 2)"
-      />
-      <input
-        :ref="(el) => inputs[3] = el"
-        :class="{ filled: filled[3], checking: isChecking }"
-        inputmode="numeric"
-        maxlength="1"
-        @input="(e) => handleInput(e, 3)"
+        @input="(e) => handleInput(e, i - 1)"
       />
     </div>
     <div class="sms-info-block">
-      <p v-if="!allFilled">Код можно запросить повторно через <span>30 </span>
+      <p v-if="!allFilled">
+        Код можно запросить повторно через <span>30 </span>
         <span>секунд</span>
       </p>
       <ErrorHintComponent
-        v-if="allFilled"
+        v-if="invalidAttempt"
         :msg="'Код введен неверно. Попробуйте ещё раз'"
       />
-      <p v-if="allFilled" class="verification-process">
-        Идет проверка... пожалуйста подождите</p>
+      <p v-if="allFilled && !invalidAttempt" class="verification-process">
+        Идет проверка... пожалуйста подождите
+      </p>
       <div class="loading-animation">
         <img
           v-if="allFilled"
+          class="animate"
           src="../../../assets/images/Animate.svg"
           width="138"
           height="128"
-          class="animate"
-        >
+          alt=""
+        />
       </div>
-      <p>Код не пришел? <router-Link :to="'/'">Отправить ещё раз</router-Link></p>
-  </div>
+      <p>Код не пришел?
+        <router-link :to="'/auth/phone'">Отправить ещё раз</router-link>
+      </p>
+    </div>
   </div>
 </template>
 <style lang="scss">
@@ -151,6 +160,5 @@ const handleInput = (e, index) => {
     color: $color_text_black;
   }
 }
-
 
 </style>
