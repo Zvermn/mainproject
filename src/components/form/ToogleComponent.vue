@@ -28,7 +28,7 @@ const toggle = () => {
   </div>
 </template>
 <style lang="scss" scoped>
-@use '../css/abstractions/' as *;
+@use '../../css/abstractions/' as *;
 
 .toggle-container{
   display: flex;

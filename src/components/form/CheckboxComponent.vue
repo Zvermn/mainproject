@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import IconComponent from '../IconComponent.vue'
+import IconComponent from '../commons/IconComponent.vue'
 
 const props = defineProps({
   modelValue: {

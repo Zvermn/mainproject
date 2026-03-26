@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import IconComponent from '../IconComponent.vue'
+import IconComponent from '../commons/IconComponent.vue'
 
 const router = useRouter();
 

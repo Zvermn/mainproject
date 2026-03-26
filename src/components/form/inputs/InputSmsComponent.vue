@@ -1,5 +1,5 @@
 <script setup>
-import ErrorHintComponent from './form/ErrorHintComponent.vue';
+import ErrorHintComponent from '../ErrorHintComponent.vue';
 import { ref, computed } from 'vue';
 
 // Массив состояний заполненности
@@ -88,7 +88,7 @@ const handleInput = (e, index) => {
       <div class="loading-animation">
         <img
           v-if="allFilled"
-          src="../assets/images/Animate.svg"
+          src="../../../assets/images/Animate.svg"
           width="138"
           height="128"
           class="animate"
@@ -99,7 +99,7 @@ const handleInput = (e, index) => {
   </div>
 </template>
 <style lang="scss">
-@use '../css/abstractions/' as *;
+@use '../../../css/abstractions/' as *;
 
 .input-sms-wrap {
   display: flex;

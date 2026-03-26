@@ -18,7 +18,7 @@ const props = defineProps({
   </div>
 </template>
 <style lang="scss">
-  @use '../css/abstractions/' as *;
+  @use '../../css/abstractions/' as *;
   .progress-wrap {
     width: 100%;
     height: 8px;

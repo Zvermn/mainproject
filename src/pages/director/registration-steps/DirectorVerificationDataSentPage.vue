@@ -1,7 +1,7 @@
 <script setup>
-import TextAreaComponent from 'src/components/TextAreaComponent.vue';
-import StepsComponent from 'src/components/nav/StepsComponent.vue';
-import ButtonComponent from 'src/components/buttons/ButtonComponent.vue';
+import TextAreaComponent from '../../../components/form/TextAreaComponent.vue';
+import StepsComponent from '../../../components/buttons/StepsComponent.vue';
+import ButtonComponent from '../../../components/buttons/ButtonComponent.vue';
 import { ref } from 'vue';
 
 const isSend = ref(false);

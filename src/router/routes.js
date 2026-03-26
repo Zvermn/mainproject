@@ -1,33 +1,33 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/commons/logoLayout.vue'),
-    children: [{ path: '', component: () => import('pages/welcomePage.vue') }],
+    component: () => import('layouts/commons/LogoLayout.vue'),
+    children: [{ path: '', component: () => import('pages/WelcomePage.vue') }],
   },
   {
     path: '/auth/phone',
-    component: () => import('layouts/commons/logoLayout.vue'),
-    children: [{ path: '', component: () => import('pages/auth/authPhonePage.vue') }],
+    component: () => import('layouts/commons/LogoLayout.vue'),
+    children: [{ path: '', component: () => import('pages/auth/AuthPhonePage.vue') }],
   },
   {
     path: '/auth-sms',
-    component: () => import('layouts/commons/logoSmsLayout.vue'),
-    children: [{ path: '', component: () => import('pages/auth/authSmsPage.vue') }],
+    component: () => import('layouts/commons/LogoSmsLayout.vue'),
+    children: [{ path: '', component: () => import('pages/auth/AuthSmsPage.vue') }],
   },
   {
     path: '/director/registration-steps/verification',
-    component: () => import('layouts/commons/emptyLayout.vue'),
-    children: [{ path: '', component: () => import('pages/director/registration-steps/directorVerificationDataPage.vue') }],
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorVerificationDataPage.vue') }],
   },
   {
     path: '/director/registration-steps/assistant-invite',
-    component: () => import('layouts/commons/emptyLayout.vue'),
-    children: [{ path: '', component: () => import('pages/director/directorAssistentInvitePage.vue') }],
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorAssistantInvitePage.vue') }],
   },
   {
     path: '/director/registration-steps/data-sent',
-    component: () => import('layouts/commons/emptyLayout.vue'),
-    children: [{ path: '', component: () => import('pages/director/registration-steps/directorVerificationDataSentPage.vue') }],
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorVerificationDataSentPage.vue') }],
   },
 
   // Always leave this as last one,

@@ -1,7 +1,7 @@
 <script setup>
-import CardComponent from 'src/components/CardComponent.vue';
-import StepsComponent from 'src/components/nav/StepsComponent.vue';
-import ButtonComponent from 'src/components/buttons/ButtonComponent.vue';
+import CardComponent from '../../../components/commons/CardComponent.vue';
+import StepsComponent from '../../../components/buttons/StepsComponent.vue';
+import ButtonComponent from '../../../components/buttons/ButtonComponent.vue';
 </script>
 
 <template>

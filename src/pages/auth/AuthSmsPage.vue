@@ -1,6 +1,6 @@
 <script setup>
-import CardComponent from 'src/components/CardComponent.vue';
-import InputSmsComponent from 'src/components/InputSmsComponent.vue';
+import CardComponent from '../../components/commons/CardComponent.vue';
+import InputSmsComponent from '../../components/form/inputs/InputSmsComponent.vue';
 import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 

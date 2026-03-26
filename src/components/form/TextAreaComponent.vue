@@ -1,5 +1,5 @@
 <script setup>
-import IconComponent from './IconComponent.vue';
+import IconComponent from '../commons/IconComponent.vue';
 import { ref, computed } from 'vue';
 
 
@@ -47,7 +47,7 @@ const textareaHeight = computed(() => {
 </template>
 
 <style lang="scss">
-@use '../css/abstractions/' as *;
+@use '../../css/abstractions/' as *;
 .block-text-area {
   width: 100%;
   overflow: hidden;

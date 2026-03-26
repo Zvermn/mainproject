@@ -1,6 +1,6 @@
 <script setup>
-import ButtonComponent from 'src/components/buttons/ButtonComponent.vue'
-import LinearProgressComponent from 'src/components/LinearProgressComponent.vue';
+import ButtonComponent from '../components/buttons/ButtonComponent.vue'
+import LinearProgressComponent from '../components/indicators/LinearProgressComponent.vue';
 import { ref, onMounted, onUnmounted } from 'vue'
 import { setCssVar } from 'quasar'
 

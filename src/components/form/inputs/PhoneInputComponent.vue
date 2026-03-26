@@ -1,6 +1,6 @@
 <script setup>
-import ErrorHintComponent from './ErrorHintComponent.vue'
-import IconComponent from '../IconComponent.vue'
+import ErrorHintComponent from '../ErrorHintComponent.vue'
+import IconComponent from '../../commons/IconComponent.vue'
 import { ref } from 'vue'
 
 
@@ -52,7 +52,7 @@ let numberPhone = ref('');
 </template>
 
 <style lang="scss">
-@use '../../css/abstractions/' as *;
+@use '../../../css/abstractions/' as *;
 
 .input-wrap {
   display: flex;

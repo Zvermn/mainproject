@@ -1,5 +1,5 @@
 <script setup>
-import StepsComponent from 'src/components/nav/StepsComponent.vue';
+import StepsComponent from '../../components/buttons/StepsComponent.vue';
 
 </script>
 

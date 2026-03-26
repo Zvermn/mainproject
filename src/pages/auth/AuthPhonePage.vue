@@ -3,10 +3,10 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 
-import PhoneInputComponent from 'src/components/form/PhoneInputComponent.vue'
-import CheckboxComponent from 'src/components/form/CheckboxComponent.vue'
-import ButtonComponent from 'src/components/buttons/ButtonComponent.vue'
-import CardComponent from 'src/components/CardComponent.vue'
+import PhoneInputComponent from '../../components/form/inputs/PhoneInputComponent.vue'
+import CheckboxComponent from '../../components/form/CheckboxComponent.vue'
+import ButtonComponent from '../../components/buttons/ButtonComponent.vue'
+import CardComponent from '../../components/commons/CardComponent.vue'
 
 const router = useRouter();
 const isNotApproved = ref(false);
