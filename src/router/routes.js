@@ -11,23 +11,23 @@ const routes = [
   },
   {
     path: '/auth-sms',
-    component: () => import('layouts/commons/LogoLayoutSms.vue'),
+    component: () => import('layouts/commons/logoSmsLayout.vue'),
     children: [{ path: '', component: () => import('pages/auth/authSmsPage.vue') }],
   },
   {
     path: '/director/registration-steps/verification',
-    component: () => import('layouts/commons/AuthEmptyLayout.vue'),
+    component: () => import('layouts/commons/emptyLayout.vue'),
     children: [{ path: '', component: () => import('pages/director/registration-steps/directorVerificationDataPage.vue') }],
   },
   {
-    path: '/auth-director-2',
-    component: () => import('layouts/commons/AuthEmptyLayout.vue'),
+    path: '/director/registration-steps/assistant-invite',
+    component: () => import('layouts/commons/emptyLayout.vue'),
     children: [{ path: '', component: () => import('pages/director/directorAssistentInvitePage.vue') }],
   },
   {
-    path: '/error-director',
-    component: () => import('layouts/commons/AuthEmptyLayout.vue'),
-    children: [{ path: '', component: () => import('pages/ErrorDirectorPage.vue') }],
+    path: '/director/registration-steps/data-sent',
+    component: () => import('layouts/commons/emptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/director/registration-steps/directorVerificationDataSentPage.vue') }],
   },
 
   // Always leave this as last one,

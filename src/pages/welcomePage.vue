@@ -63,7 +63,7 @@ onUnmounted(() => {
   </div>
   <button-component
     :title="'Продолжить'"
-    :to-path="'/auth-phone'"
+    :to-path="'/auth/phone'"
     class="btn-primary"
   />
 </template>

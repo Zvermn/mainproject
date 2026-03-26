@@ -11,7 +11,7 @@ const sendInfo = () => {
 </script>
 
 <template>
-  <steps-component :to-path="'/auth-director-1'">
+  <steps-component :to-path="'/director/registration-steps/verification'">
     <template #step-content>
       <h2>Исправление ошибки</h2>
     </template>
@@ -33,13 +33,13 @@ const sendInfo = () => {
     <p class="system-info">В скором времени мы всё перепроверим и при необходимости свяжемся с вами.</p>
     <button-component
         :title="'Спасибо, продолжить'"
-        :to-path="'/auth-director-1'"
+        :to-path="'/director/registration-steps/verification'"
         class="btn-primary"
     />
   </div>
   </template>
 <style lang="scss">
-@use '../css/abstractions/' as *;
+@use '../../../css/abstractions/' as *;
  .user-comment-wrap{
   p{
     @include body-3b;

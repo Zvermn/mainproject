@@ -19,8 +19,8 @@ watch(isCodeFilled, (newValue) => {
 
     // Запускаем отсчёт 3 секунды
     timer = setTimeout(() => {
-      router.push('/auth-director-1'); // или куда нужно
-    }, 9000);
+      router.push('/director/registration-steps/verification'); // или куда нужно
+    }, 1000);
   }
 });
 

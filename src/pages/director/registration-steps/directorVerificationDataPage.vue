@@ -5,7 +5,7 @@ import ButtonComponent from 'src/components/buttons/ButtonComponent.vue';
 </script>
 
 <template>
-  <steps-component :to-path="'/auth-phone'">
+  <steps-component :to-path="'/auth/phone'">
     <template #step-content>
       <h2>Вход в систему</h2>
       <span>Шаг </span><span>1 </span><span>из </span><span>3</span>
@@ -29,18 +29,18 @@ import ButtonComponent from 'src/components/buttons/ButtonComponent.vue';
   </CardComponent>
   <ButtonComponent
     :title="'Всё верно'"
-    :to-path="'/auth-director-2'"
+    :to-path="'/director/registration-steps/assistant-invite'"
     class="btn-primary"
   />
   <ButtonComponent
     :title="'Тут ошибка'"
-    :to-path="'/error-director'"
+    :to-path="'/director/registration-steps/data-sent'"
     class="btn-secondary"
   />
 </template>
 
 <style lang="scss">
-@use '../css/abstractions/' as *;
+@use '../../../css/abstractions/' as *;
 .card{
   p{
     margin-bottom: $space-16;

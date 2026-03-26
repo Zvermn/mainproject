@@ -6,7 +6,7 @@ import ToogleComponent from 'src/components/ToogleComponent.vue';
 </script>
 
 <template>
-  <steps-component :to-path="'/auth-director-1'">
+  <steps-component :to-path="'/director/registration-steps/verification'">
     <template #step-content>
       <h2>Ваш заместитель</h2>
       <span>Шаг </span><span>2 </span><span>из </span><span>3</span>
@@ -34,7 +34,7 @@ import ToogleComponent from 'src/components/ToogleComponent.vue';
   </CardComponent>
   <ButtonComponent
     :title="'Не сейчас'"
-    :to-path="'/error-director'"
+    :to-path="'/director/registration-steps/data-sent'"
     class="btn-secondary"
   />
 </template>

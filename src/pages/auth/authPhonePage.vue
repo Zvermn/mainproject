@@ -51,7 +51,7 @@ const checkApproval = () => {
     v-if="isNotApproved"
     :icon-position="'right'"
     :title="'Хорошо, продолжить'"
-    :to-path="'/auth-phone'"
+    :to-path="'/auth/phone'"
     :icon-color="'light'"
     :icon-name="'arrow-right'"
     class="btn-primary"
