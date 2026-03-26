@@ -1,39 +1,79 @@
 @use "sass:math";
-$base-brown-300: #F6CBBA; //! new
-$base-brown-500: #E29578; //! new
-$base-brown-700: #D08467; //! new
-$base-gray-100: #E5E5E5; //! new
-$base-gray-300: #B5B5B5; //! new
-$base-gray-500: #939393; //! new
-$base-black: #2D2522; //! new
+
+// units
+$unit: 1px;
+$unit-x2: $unit*2;
+$unit-x10: $unit*10;
+$unit-x20: $unit*20;
+
+$space-2: 2px;
+$space-4: 4px;
+$space-8: 8px;
+$space-12: 12px;
+$space-16: 16px;
+$space-20: 20px;
+$space-28: 28px;
+$space-40: 40px;
+
+// цветовая гамма
+$base-brown-300: #F6CBBA;
+$base-brown-500: #E29578;
+$base-brown-700: #D08467;
+$base-gray-100: #E5E5E5;
+$base-gray-300: #B5B5B5;
+$base-gray-500: #939393;
+$base-black: #2D2522;
 
 
 $primary-color: #E29578;
 $secondary-color: #FBE5C8;
-$third-color: #FEB8B4; //! new
-$success-color: #A2D9CE; //!new
+$third-color: #FEB8B4;
+$success-color: #A2D9CE;
 
+$background-color: #FFF2DE;
+$primary-surface-color: #FBE5C8;
+$surface-color: #FFFFFF;
+$surface-error-color: #FFEBE9;
 
-$primary-bdr-default: #D08467; //! new
-$primary-bdr-light: #F6CBBA; //! new
-$error-brd-color: #CE655A; //!new
-$success-brd-color: #A2D9CE; //!new
+$brd-primary-color-default: #D08467;
+$brd-primary-color-light: #F6CBBA;
+$brd-error-color: #CE655A;
+$brd-success-color: #A2D9CE;
 
-$background-color: #FFF2DE; //! new
-$surface-color: #FFFFFF; //!new
-$surface-error-color: #FFEBE9; //!new
+$font-primary-color: #2D2522;
+$font-secondary-color: #939393;
+$font-brown: #D08467;
+$font-placeholder: #B5B5B5;
+$font-link: #1091E0;
+$font-error: #F67769;
 
+$icon-dark-color: #2D2522;
+$icon-gray-color: #939393;
+$icon-light-color: #FFFFFF;
+$icon-success-color: #A2D9CE;
+$icon-error-color: #F67769;
 
-$primary-font-color: #2D2522;
-$secondary-font-color: #939393;
-$font-brown: #D08467; //! new
-$font-placeholder: #B5B5B5; //!new
-$font-link: #1091E0; //! new
-$font-error: #F67769; //! new
+$btn-inactive-color: #B5B5B5;
+$btn-hover-color: #D08467;
 
-$icon-dark-color: #2D2522; //!new
-$icon-gray-color: #939393; //!new
-$icon-light-color: #FFFFFF; //!new
+// borders
 
-$btn-inactive-color: #B5B5B5; //!new
-$btn-hover-color: #D08467; //!new
+$brd-radius-sm: 8px;
+$brd-radius-md: 12px;
+$brd-radius-lg: 20px;
+
+$brd-width-default: 1px;
+$brd-width-md: 2px;
+$brd-width-lg: 3px;
+$brd-style-default: solid;
+$brd-primary-default: $brd-width-default $brd-style-default $brd-primary-color-default;
+
+//icons
+
+$icon-width: 35px;
+$icon-height: 35px;
+
+// fonts-family
+
+$heading-1: 'Nunito';
+$heading-2: 'Manrope';

@@ -1,0 +1,79 @@
+@use './variables' as *;
+
+// Главный заголовок экрана
+@mixin head-1 {
+  font-family: $heading-1;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+// Заголовки секций
+@mixin head-2 {
+  font-family: $heading-1;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: bold;
+
+}
+
+// Основной наборный текст
+@mixin body-2 {
+  font-family: $heading-2;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+// Жирный основной наборный текст
+@mixin body-2b {
+  font-family: $heading-2;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+// Второстепенный текст, подсказки
+@mixin body-3 {
+  font-family: $heading-2;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+// Жирный второстепенный текст, подсказки
+@mixin body-3b {
+  font-family: $heading-2;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+// Кнопки, инпуты, описание
+@mixin label-1 {
+  font-family: $heading-2;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@mixin label-2 {
+  font-family: $heading-1;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+// Мелкий текст, подписи
+@mixin caption-1 {
+  font-family: $heading-2;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+// Жирный мелкий текст, подписи
+@mixin caption-bold {
+  font-family: $heading-2;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+// Мелкий текст, подписи
+@mixin caption-2 {
+  font-family: $heading-2;
+  font-size: 11px;
+  font-weight: normal;
+}

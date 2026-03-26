@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Улучшенный жидкий фильтр с добавлением объемной тени -->
+    <filter id="premium-goo" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="
+        1 0 0 0 0  
+        0 1 0 0 0  
+        0 0 1 0 0  
+        0 0 0 24 -9" result="goo" />
+      <!-- Легкая тень добавляет эффект 3D-левитации над интерфейсом -->
+      <feDropShadow in="goo" dx="0" dy="6" stdDeviation="10" flood-color="#4A1F0D" flood-opacity="0.2" />
+    </filter>
+
+    <!-- Градиент 1: От персикового к основному терракотовому -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD8CB" />
+      <stop offset="100%" stop-color="#E29578" />
+    </linearGradient>
+    
+    <!-- Градиент 2: От кораллового к глубокому медному -->
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EFA890" />
+      <stop offset="100%" stop-color="#C46E50" />
+    </linearGradient>
+
+    <!-- Градиент 3: Строгий вертикальный перелив -->
+    <linearGradient id="grad3" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#E29578" />
+      <stop offset="100%" stop-color="#B86241" />
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#premium-goo)">
+    
+    <!-- 1. Кипящее ядро (состоит из двух вращающихся центров) -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0 200 200; 360 200 200" dur="6s" repeatCount="indefinite" />
+      <circle cx="185" cy="200" r="38" fill="url(#grad1)">
+        <animate attributeName="cx" values="185; 195; 185" dur="3s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+      </circle>
+      <circle cx="215" cy="200" r="34" fill="url(#grad3)">
+        <animate attributeName="cx" values="215; 205; 215" dur="4s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+      </circle>
+    </g>
+
+    <!-- 2. Массивная капля (плавно вытягивается наверх) -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0 200 200; -360 200 200" dur="12s" repeatCount="indefinite" />
+      <circle cx="200" cy="200" r="28" fill="url(#grad2)">
+        <animate attributeName="cy" values="200; 80; 200" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.45 0 0.15 1; 0.45 0 0.15 1" />
+      </circle>
+    </g>
+
+    <!-- 3. Двойник, пронизывающий центр (быстро пролетает сквозь массу) -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="90 200 200; 450 200 200" dur="8s" repeatCount="indefinite" />
+      <circle cx="200" cy="200" r="22" fill="#E29578">
+        <animate attributeName="cx" values="80; 320; 80" dur="4s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.45 0 0.15 1; 0.45 0 0.15 1" />
+      </circle>
+    </g>
+
+    <!-- 4. Тяжелая капля с асинхронной задержкой -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="360 200 200; 0 200 200" dur="12s" repeatCount="indefinite" />
+      <circle cx="200" cy="200" r="34" fill="url(#grad1)">
+        <animate attributeName="cy" values="200; 330; 200" dur="6s" begin="-3s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.45 0 0.15 1; 0.45 0 0.15 1" />
+      </circle>
+    </g>
+
+    <!-- 5. Маленький спутник (стремительно отрывается и возвращается) -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0 200 200; 360 200 200" dur="4s" repeatCount="indefinite" />
+      <circle cx="200" cy="200" r="16" fill="url(#grad3)">
+        <animate attributeName="cx" values="200; 70; 200" dur="3s" begin="-1.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.45 0 0.15 1; 0.45 0 0.15 1" />
+      </circle>
+    </g>
+
+  </g>
+</svg>

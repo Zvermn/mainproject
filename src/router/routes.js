@@ -2,7 +2,32 @@ const routes = [
   {
     path: '/',
     component: () => import('layouts/commons/LogoLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    children: [{ path: '', component: () => import('pages/WelcomePage.vue') }],
+  },
+  {
+    path: '/auth/phone',
+    component: () => import('layouts/commons/LogoLayout.vue'),
+    children: [{ path: '', component: () => import('pages/auth/AuthPhonePage.vue') }],
+  },
+  {
+    path: '/auth-sms',
+    component: () => import('layouts/commons/LogoSmsLayout.vue'),
+    children: [{ path: '', component: () => import('pages/auth/AuthSmsPage.vue') }],
+  },
+  {
+    path: '/director/registration-steps/verification',
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorVerificationDataPage.vue') }],
+  },
+  {
+    path: '/director/registration-steps/assistant-invite',
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorAssistantInvitePage.vue') }],
+  },
+  {
+    path: '/director/registration-steps/data-sent',
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorVerificationDataSentPage.vue') }],
   },
 
   // Always leave this as last one,

@@ -1,0 +1,20 @@
+@use '../abstractions/' as *;
+
+.card {
+    background-color: $color_card_surface;
+    border-color: $color_card_border_primary_light;
+    border-style: solid;
+    border-width: $width_default;
+    padding: $space_20;
+    @include body-2;
+    border-radius: $radius_card_big;
+}
+
+.block-text-area {
+    background-color: $color_card_surface;
+    border-color: $color_card_border_primary_light;
+    border-style: solid;
+    border-width: $width_default;
+    @include body-2;
+    border-radius: $radius_card_big;
+}
