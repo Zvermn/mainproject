@@ -78,6 +78,32 @@
   }
 }
 
+.btn-tetriary {
+  width: 100%;
+  padding: $space_4 $space_20;
+  @include label-2;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: $space_20;
+  justify-content: center;
+  align-items: center;
+
+
+  background-color: transparent;
+
+  color: $color_text_primary;
+
+  div {
+    flex-basis: 40px;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+
 .btn-nav {
   width: 50px;
   height: 50px;
@@ -87,5 +113,10 @@
   border-width: $width_default;
   border-style: solid;
   background-color: $color_button_primary;
+  box-shadow: -0px 13px 11.8px -6px $color_button_primary;
 
+  &:hover {
+    background-color: $color_button_primary_hover;
+
+  }
 }

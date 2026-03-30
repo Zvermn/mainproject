@@ -15,6 +15,9 @@ html {
   gap: 24px;
   margin: 0 auto;
   background-color: $color_background;
+
+  overflow: auto;
+  scrollbar-width: none;
 }
 
 a {

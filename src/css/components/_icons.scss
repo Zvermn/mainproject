@@ -1,108 +1,161 @@
 // обертки иконок
 @use '../abstractions/' as *;
 
-.icon-block-size-sm {
-    width: 30px;
-    height: 30px;
-    background-repeat: no-repeat;
-    background-color: transparent;
+.icon-block-size-md {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-color: transparent;
 }
 
 .icon-block-size-lg {
-    width: 40px;
-    height: 40px;
-    background-repeat: no-repeat;
-    background-color: transparent;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-color: transparent;
 }
+
+.icon-block-size-sm {
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+
 
 //цвет для иконок
 
 .bg-icon-primary {
-    background-color: $color_icon_primary;
+  background-color: $color_icon_primary;
 }
 
 .bg-icon-dark {
-    background-color: $color_icon_dark;
+  background-color: $color_icon_dark;
 }
 
 .bg-icon-gray {
-    background-color: $color_icon_gray;
+  background-color: $color_icon_gray;
 }
 
 .bg-icon-light {
-    background-color: $color_icon_light;
+  background-color: $color_icon_light;
 }
 
 .bg-icon-success {
-    background-color: $color_icon_success;
+  background-color: $color_icon_success;
 }
 
 .bg-icon-error {
-    background-color: $color_icon_error;
+  background-color: $color_icon_error;
 }
 
 //иконки парное обозначение (большая, маленькая)
 
 .icon-arrow-left-lg {
-    mask: url(../../assets/icons/large/ArrowLeft.svg);
+  mask: url(../../assets/icons/large/ArrowLeft.svg);
 }
 
-.icon-arrow-left-sm {
-    mask: url(../../assets/icons/small/ArrowLeft.svg);
+.icon-arrow-left-md {
+  mask: url(../../assets/icons/medium/ArrowLeft.svg);
 }
 
 .icon-arrow-right-lg {
-    mask: url(../../assets/icons/large/ArrowRight.svg);
+  mask: url(../../assets/icons/large/ArrowRight.svg);
 }
 
-.icon-arrow-right-sm {
-    mask: url(../../assets/icons/small/ArrowRight.svg);
+.icon-arrow-right-md {
+  mask: url(../../assets/icons/medium/ArrowRight.svg);
 }
 
 .icon-phone-lg {
-    mask: url(../../assets/icons/large/Phone.svg);
+  mask: url(../../assets/icons/large/Phone.svg);
 }
 
-.icon-phone-sm {
-    mask: url(../../assets/icons/small/Phone.svg);
+.icon-phone-md {
+  mask: url(../../assets/icons/medium/Phone.svg);
 }
 
 .icon-circle-warning-lg {
-    mask: url(../../assets/icons/large/Circle_Warning.svg);
+  mask: url(../../assets/icons/large/Circle_Warning.svg);
 }
 
-.icon-circle-warning-sm {
-    mask: url(../../assets/icons/small/Circle_Warning.svg);
+.icon-circle-warning-md {
+  mask: url(../../assets/icons/medium/Circle_Warning.svg);
 }
 
 .icon-check-big-lg {
-    mask: url(../../assets/icons/large/Check_Big.svg);
+  mask: url(../../assets/icons/large/Check_Big.svg);
 }
 
-.icon-check-big-sm {
-    mask: url(../../assets/icons/small/Check_Big.svg);
+.icon-check-big-md {
+  mask: url(../../assets/icons/medium/Check_Big.svg);
 }
 
 .icon-checkbox-check-lg {
-    mask: url(../../assets/icons/large/Checkbox_Check.svg);
+  mask: url(../../assets/icons/large/Checkbox_Check.svg);
 }
 
-.icon-checkbox-check-sm {
-    mask: url(../../assets/icons/small/Checkbox_Check.svg);
+.icon-checkbox-check-md {
+  mask: url(../../assets/icons/medium/Checkbox_Check.svg);
 }
 
 .icon-checkbox-uncheck-lg {
-    mask: url(../../assets/icons/large/Checkbox_Unchecked.svg);
+  mask: url(../../assets/icons/large/Checkbox_Unchecked.svg);
 }
 
-.icon-checkbox-uncheck-sm {
-    mask: url(../../assets/icons/small/Checkbox_Unchecked.svg);
+.icon-checkbox-uncheck-md {
+  mask: url(../../assets/icons/medium/Checkbox_Unchecked.svg);
 }
 
 .icon-chat-circle-dots-lg {
-    mask: url(../../assets/icons/large/Chat_Circle_Dots.svg);
+  mask: url(../../assets/icons/large/Chat_Circle_Dots.svg);
 }
 
-.icon-chat-circle-dots-sm {
-    mask: url(../../assets/icons/small/Chat_Circle_Dots.svg);
+.icon-chat-circle-dots-md {
+  mask: url(../../assets/icons/medium/Chat_Circle_Dots.svg);
+}
+
+.icon-adressbook-lg {
+  mask: url(../../assets/icons/large/Adressbook.svg);
+}
+
+.icon-adressbook-md {
+  mask: url(../../assets/icons/medium/Adressbook.svg);
+}
+
+.icon-home-lg {
+  mask: url(../../assets/icons/large/Home.svg);
+}
+
+.icon-home-md {
+  mask: url(../../assets/icons/medium/Home.svg);
+}
+
+.icon-home-sm {
+  mask: url(../../assets/icons/small/Home.svg);
+}
+
+.icon-settings-lg {
+  mask: url(../../assets/icons/large/Settings.svg);
+}
+
+.icon-settings-md {
+  mask: url(../../assets/icons/medium/Settings.svg);
+}
+
+.icon-settings-sm {
+  mask: url(../../assets/icons/small/Settings.svg);
+}
+
+.icon-user-groups-lg {
+  mask: url(../../assets/icons/large/Users_Group.svg);
+}
+
+.icon-user-groups-md {
+  mask: url(../../assets/icons/medium/Users_Group.svg);
+}
+
+.icon-user-groups-sm {
+  mask: url(../../assets/icons/small/Users_Group.svg);
 }

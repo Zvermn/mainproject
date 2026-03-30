@@ -25,6 +25,9 @@ const checkApproval = () => {
   <phone-input-component
     v-if="!isNotApproved"
     :label="'Введите номер телефона для входа'"
+    :icon-color="'primary'"
+    :icon-name="'phone'"
+    :icon-size="'lg'"
     />
   <checkbox-component
     v-if="!isNotApproved"

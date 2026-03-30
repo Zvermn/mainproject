@@ -41,7 +41,7 @@ const toggle = () => {
 
 }
 .toggle-wrap {
-  // position: relative;
+  position: relative;
   width: 60px;
   height: 30px;
   display: flex;

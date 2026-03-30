@@ -10,6 +10,21 @@ const props = defineProps({
     default: 'Введите номер телефона',
     required: false,
   },
+    iconColor: {
+    type: String,
+    default: '',
+    required: false,
+  },
+  iconName: {
+    type: String,
+    default: '',
+    required: false,
+  },
+  iconSize: {
+    type: String,
+    default: '',
+    required: false,
+  },
 })
 
 let errorPhone = ref(false);
@@ -23,9 +38,9 @@ let numberPhone = ref('');
     <label for="login-phone">{{ props.label }}</label>
     <div :class="{ error: errorPhone, correct: numberPhone.length == 11} " class="input-field-wrap">
       <icon-component
-        :size="'lg'"
-        :color="'primary'"
-        :icon-name="'phone'"
+        :size="props.iconSize"
+        :color="props.iconColor"
+        :icon-name="props.iconName"
       />
       <input
         v-model="numberPhone"
@@ -36,10 +51,10 @@ let numberPhone = ref('');
         maxlength="11"
         @input="inputPhone"
       />
-      <icon-component v-if="!errorPhone"
+      <icon-component v-if="errorPhone"
         :size="'lg'"
-        :color="''"
-        :icon-name="''"
+        :color="'error'"
+        :icon-name="'circle-warning'"
       />
       <icon-component v-if="numberPhone.length == 11"
         :size="'lg'"

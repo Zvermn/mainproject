@@ -25,9 +25,19 @@ const routes = [
     children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorAssistantInvitePage.vue') }],
   },
   {
+    path: '/director/registration-steps/set-group-count',
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorSetGroupCountPage.vue') }],
+  },
+  {
     path: '/director/registration-steps/data-sent',
     component: () => import('layouts/commons/EmptyLayout.vue'),
     children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorVerificationDataSentPage.vue') }],
+  },
+  {
+    path: '/director/home',
+    component: () => import('layouts/director/DirectorHomeLayout.vue'),
+    children: [{ path: '', component: () => import('pages/director/DirectorHomePage.vue') }],
   },
 
   // Always leave this as last one,
