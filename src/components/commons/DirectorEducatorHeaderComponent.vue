@@ -7,7 +7,7 @@ import IconComponent from './IconComponent.vue';
     <div class="header-info-progress">
       <span>Хороший день! Сегодня вы будете удачливее на 15%</span>
       <linear-progress-component
-        :finish="'35'"
+        :finish="'20'"
       />
     </div>
     <div class="header-info-profile">
