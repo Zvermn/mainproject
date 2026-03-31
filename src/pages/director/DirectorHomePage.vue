@@ -1,3 +1,7 @@
+<script setup>
+import FundSupportComponent from '../../components/director/FundSupportComponent.vue'
+
+</script>
 <template>
-<div></div>
+<fund-support-component/>
 </template>

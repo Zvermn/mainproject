@@ -20,6 +20,11 @@ const routes = [
     children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorVerificationDataPage.vue') }],
   },
   {
+    path: '/director/registration-steps/data-sent',
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorVerificationDataSentPage.vue') }],
+  },
+  {
     path: '/director/registration-steps/assistant-invite',
     component: () => import('layouts/commons/EmptyLayout.vue'),
     children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorAssistantInvitePage.vue') }],
@@ -30,9 +35,9 @@ const routes = [
     children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorSetGroupCountPage.vue') }],
   },
   {
-    path: '/director/registration-steps/data-sent',
+    path: '/director/registration-steps/finish',
     component: () => import('layouts/commons/EmptyLayout.vue'),
-    children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorVerificationDataSentPage.vue') }],
+    children: [{ path: '', component: () => import('pages/director/registration-steps/DirectorAuthFinishPage.vue') }],
   },
   {
     path: '/director/home',

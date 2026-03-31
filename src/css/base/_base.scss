@@ -12,12 +12,19 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 24px;
+  gap: $space_main_content;
   margin: 0 auto;
   background-color: $color_background;
 
   overflow: auto;
   scrollbar-width: none;
+}
+
+.container-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $space_main_content;
 }
 
 a {

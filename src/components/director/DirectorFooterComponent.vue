@@ -2,7 +2,7 @@
 import IconComponent from '../commons/IconComponent.vue';
 </script>
 <template>
-  <div class="footer-wrap">
+  <footer class="director-footer">
     <div class="footer-item active">
       <icon-component
       :size="'sm'"
@@ -27,12 +27,12 @@ import IconComponent from '../commons/IconComponent.vue';
       />
       <span>Главная</span>
     </div>
-  </div>
+  </footer>
 </template>
 
 <style lang="scss">
 @use "../../css/abstractions/" as *;
-.footer-wrap {
+.director-footer {
   background-color: $color_white;
   border-radius: $radius_full;
   display: flex;

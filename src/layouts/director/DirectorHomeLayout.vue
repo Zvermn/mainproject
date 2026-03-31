@@ -1,16 +1,13 @@
 <script setup>
-import DirectorFooterComponent from 'src/components/director/DirectorFooterComponent.vue';
+import DirectorEducatorHeaderComponent from '../../components/commons/DirectorEducatorHeaderComponent.vue';
+import DirectorFooterComponent from '../../components/director/DirectorFooterComponent.vue';
 </script>
 
 <template>
   <div class="container">
-    <header class="director-header">
-
-    </header>
+    <director-educator-header-component />
     <router-view />
-<footer class="director-footer">
-  <director-footer-component />
-</footer>
+    <director-footer-component />
   </div>
 </template>
 
