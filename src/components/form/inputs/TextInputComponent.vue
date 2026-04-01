@@ -63,7 +63,7 @@ const updateValue = (event) => {
         :icon-name="props.iconName"
       />
       <input
-        :type="text"
+        :type="type"
         id="set-user-data"
         :value="modelValue"
         :placeholder="placeholder"

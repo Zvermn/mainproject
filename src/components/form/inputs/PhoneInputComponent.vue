@@ -25,38 +25,51 @@ const props = defineProps({
     default: '',
     required: false,
   },
+  modelValue: {
+    type: String,
+    default: '',
+    required: false,
+  },
 })
 
 let errorPhone = ref(false);
 let errorMsg = ref(false);
-let numberPhone = ref('');
-
+const emit = defineEmits(['update:modelValue']);
+const updateValue = (event) => {
+  emit('update:modelValue', event.target.value);
+};
 </script>
 
 <template>
   <div class="input-wrap">
     <label for="login-phone">{{ props.label }}</label>
-    <div :class="{ error: errorPhone, correct: numberPhone.length == 11} " class="input-field-wrap">
+    <div
+      :class="{
+        error: errorPhone,
+        correct: modelValue.length === 11,
+        filled: modelValue.length != 0 && modelValue.length <= 10
+      }"
+      class="input-field-wrap">
       <icon-component
         :size="props.iconSize"
         :color="props.iconColor"
         :icon-name="props.iconName"
       />
       <input
-        v-model="numberPhone"
         type="tel"
         id="login-phone"
         class="input-tel"
         autocomplete="tel-national"
         maxlength="11"
-        @input="inputPhone"
+        :value="modelValue"
+        @input="updateValue"
       />
       <icon-component v-if="errorPhone"
         :size="'lg'"
         :color="'error'"
         :icon-name="'circle-warning'"
       />
-      <icon-component v-if="numberPhone.length == 11"
+      <icon-component v-if="modelValue.length === 11"
         :size="'lg'"
         :color="'success'"
         :icon-name="'check-big'"
@@ -106,6 +119,11 @@ let numberPhone = ref('');
 .correct.input-field-wrap {
     border-color: $color_success_border;
     border-width: $width_default;
+  }
+
+  .filled.input-field-wrap {
+    box-shadow: 0 0 5px 0 $color_primary_shadow;
+    border-color: $color_textField_border_primary;
   }
 
 .error.input-field-wrap {

@@ -4,9 +4,10 @@ import StepsComponent from '../../../components/buttons/StepsComponent.vue';
 import ButtonComponent from '../../../components/buttons/ButtonComponent.vue';
 import ToogleComponent from '../../../components/form/ToogleComponent.vue';
 import PhoneInputComponent from 'src/components/form/inputs/PhoneInputComponent.vue';
+import { ref } from 'vue';
 
-
-
+const assistantPhone = ref('');
+const sendInvitation = ref(false);
 </script>
 
 <template>
@@ -16,15 +17,15 @@ import PhoneInputComponent from 'src/components/form/inputs/PhoneInputComponent.
       <span>Шаг </span><span>2 </span><span>из </span><span>3</span>
     </template>
  </steps-component>
-  <CardComponent>
+  <card-component>
     <template #content>
       <h2>Добавьте заместителя</h2>
       <p>Он сможет помогать вам с рутиной,
          такой как верификация воспитателей в
           системе или указание общего количества групп в саду. </p>
     </template>
-  </CardComponent>
-  <CardComponent>
+  </card-component>
+  <card-component>
     <template #content>
       <h2>Права доступа:</h2>
       <p>Выберите разделы, которые будут доступны заместителю:</p>
@@ -35,46 +36,51 @@ import PhoneInputComponent from 'src/components/form/inputs/PhoneInputComponent.
       :title="'Раздел с финансами'"
       />
     </template>
-  </CardComponent>
-  <card-component class="actions">
+  </card-component>
+  <card-component
+    :class="{hidden: sendInvitation}"
+    class="actions">
     <template #content >
       <phone-input-component
+        v-model="assistantPhone"
         :label="'Телефон заместителя'"
-        :size="'md'"
         :icon-color="'primary'"
         :icon-name="'adressbook'"
         :icon-size="'lg'"
       />
-      <ButtonComponent
+      <button-component v-if="assistantPhone.replace(/\D/g, '').length === 11"
       :title="'Отправить приглашение'"
-      :to-path="'/'"
       class="btn-primary"
+      @click="sendInvitation = true"
       />
-      <ButtonComponent
+      <button-component
       :title="'Выбрать из контактов'"
-      :to-path="'/'"
       class="btn-tetriary"
       />
+    </template>
+  </card-component>
+  <card-component v-if="sendInvitation == true" class="actions">
+    <template #content >
       <p>Приглашение отправлено на номер:<br>
       <span>+7 (945) 456 95-95</span>
       </p>
-      <ButtonComponent
+      <button-component
       :title="'Отменить приглашение'"
-      :to-path="'/'"
       class="btn-secondary"
       />
-
     </template>
   </card-component>
-  <ButtonComponent
+  <button-component
+    v-if="sendInvitation == false"
     :title="'Не сейчас'"
     :to-path="'/director/home'"
-    class="btn-secondary"
+    class="btn-secondary margin-top"
   />
-  <ButtonComponent
+  <button-component
+    v-if="sendInvitation == true"
     :title="'Продолжить'"
     :to-path="'/director/registration-steps/set-group-count'"
-    class="btn-primary"
+    class="btn-primary margin-top"
   />
 </template>
 
@@ -105,6 +111,8 @@ import PhoneInputComponent from 'src/components/form/inputs/PhoneInputComponent.
     }
   }
 }
-
+ .hidden{
+  display: none;
+ }
 </style>
 

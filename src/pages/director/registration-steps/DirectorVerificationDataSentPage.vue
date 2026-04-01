@@ -33,7 +33,7 @@ const sendInfo = () => {
     <p class="system-info">В скором времени мы всё перепроверим и при необходимости свяжемся с вами.</p>
     <button-component
         :title="'Спасибо, продолжить'"
-        :to-path="'/director/registration-steps/verification'"
+        :to-path="'/director/registration-steps/assistant-invite'"
         class="btn-primary"
     />
   </div>

@@ -59,10 +59,16 @@ function redirect() {
   align-items: center;
 }
 
-.step-wrap{
+.step-content {
   h2{
     margin-bottom: 0;
   }
+
+  span {
+    @include caption-1;
+  }
 }
+
+
 
 </style>

@@ -1,0 +1,48 @@
+@use '../abstractions/' as *;
+
+.chip {
+  @include caption-1;
+  border-style: solid;
+  border-width: $width_default;
+  border-radius: $radius_full;
+  width: fit-content;
+}
+
+.onCard {
+  background-color: $color_chips_surface_OnCard;
+  border-color: $color_card_border_primary_light;
+  color: $color_text_primary;
+
+  &.active {
+    @include caption-bold;
+    background-color: $color_chips_surface_OnCard_active;
+    border-color: $color_card_border_primary;
+    color: $color_text_white;
+  }
+}
+
+.onBg {
+  background-color: $color_chips_surface_OnBgr;
+  border-color: $color_card_border_primary_light;
+  color: $color_text_primary;
+
+  &.active {
+    @include caption-bold;
+    background-color: $color_chips_surface_OnCard_active;
+    border-color: $color_card_border_primary;
+    color: $color_text_white;
+  }
+}
+
+.onAccident {
+  background-color: $color_chips_surface_OnAccent;
+  border-color: $color_card_border_primary_light;
+  color: $color_text_white;
+
+  &.active {
+    @include caption-bold;
+    background-color: $color_chips_surface_OnAccent_active;
+    border-color: $color_card_border_primary;
+    color: $color_text_secondary;
+  }
+}

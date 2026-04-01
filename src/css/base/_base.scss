@@ -27,6 +27,10 @@ html {
   gap: $space_main_content;
 }
 
+.margin-top {
+  margin-top: auto;
+}
+
 a {
   color: $color_text_link;
 }

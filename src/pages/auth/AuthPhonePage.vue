@@ -19,10 +19,13 @@ const checkApproval = () => {
     isNotApproved.value = true;
   }
 };
+
+const phoneNumber = ref('');
 </script>
 
 <template>
   <phone-input-component
+    v-model="phoneNumber"
     v-if="!isNotApproved"
     :label="'Введите номер телефона для входа'"
     :icon-color="'primary'"

@@ -4,6 +4,21 @@ import CardComponent from 'src/components/commons/CardComponent.vue';
 import TextInputComponent from 'src/components/form/inputs/TextInputComponent.vue';
 import ButtonComponent from 'src/components/buttons/ButtonComponent.vue';
 import ButtonSquareComponent from 'src/components/buttons/ButtonSquareComponent.vue';
+
+// Ссылка, которую нужно скопировать
+const referralLink = 'https://detstvo.ru/ref-487hgh7sA';
+
+// Функция копирования
+const copyToClipboard = async () => {
+  try {
+    await navigator.clipboard.writeText(referralLink);
+    console.log('✅ Ссылка скопирована:', referralLink);
+    // Можно показать уведомление: "Скопировано!"
+  } catch (err) {
+    console.error('❌ Не удалось скопировать:', err);
+    alert('Не удалось скопировать ссылку');
+  }
+};
 </script>
 <template>
   <steps-component :to-path="'/director/registration-steps/set-group-count'">
@@ -25,12 +40,13 @@ import ButtonSquareComponent from 'src/components/buttons/ButtonSquareComponent.
     :icon-name="'copy'"
     :icon-size="'lg'"
     :type="'text'"
-    :model-value="'https://detstvo.ru/ref-487hgh7sA'"
+    :model-value="referralLink"
+    readonly
     />
     <div class="copy-block">
       <button-component
         :title="'Копировать ссылку'"
-        :to-path="''"
+        @click="copyToClipboard"
         class="btn-primary"
       />
       <button-square-component
@@ -41,9 +57,6 @@ import ButtonSquareComponent from 'src/components/buttons/ButtonSquareComponent.
     </div>
     <span>Ссылка никуда не денется и вы сможете позже найти её в личном кабинете</span>
  </div>
-
-
-
   <button-component
       :title="'Продолжить'"
       :to-path="'/director/home'"
@@ -65,7 +78,7 @@ import ButtonSquareComponent from 'src/components/buttons/ButtonSquareComponent.
 
 .container-main-content {
   margin: auto 0;
-  &:last-child span{
+  &>span:last-child {
     @include caption-1;
   }
 }

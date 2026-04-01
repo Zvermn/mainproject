@@ -50,6 +50,23 @@
   background-color: $color_icon_error;
 }
 
+// Фон иконки
+
+.backing {
+  &.round {
+    border-radius: 50%;
+  }
+
+  &.square {
+    border-radius: $radius_8;
+  }
+}
+
+
+.bg-icon-surface {
+  background-color: $color_icon_surface;
+}
+
 //иконки парное обозначение (большая, маленькая)
 
 .icon-arrow-left-lg {
@@ -206,4 +223,20 @@
 
 .icon-bcircle-help-md {
   mask: url(../../assets/icons/medium/Circle_Help.svg);
+}
+
+.icon-heart-lg {
+  mask: url(../../assets/icons/large/Heart_01.svg);
+}
+
+.icon-heart-md {
+  mask: url(../../assets/icons/medium/Heart_01.svg);
+}
+
+.icon-calendar-lg {
+  mask: url(../../assets/icons/large/Calendar.svg);
+}
+
+.icon-calendar-md {
+  mask: url(../../assets/icons/medium/Calendar.svg);
 }
