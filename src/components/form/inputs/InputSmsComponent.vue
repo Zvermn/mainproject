@@ -1,45 +1,45 @@
 <script setup>
-import ErrorHintComponent from '../ErrorHintComponent.vue';
-import { ref, computed } from 'vue';
+  import ErrorHintComponent from '../ErrorHintComponent.vue';
+  import { ref, computed } from 'vue';
 
-// Массив состояний заполненности
-const filled = ref([false, false, false, false]);
+  // Массив состояний заполненности
+  const filled = ref([false, false, false, false]);
 
-// Состояние "идёт проверка"
-const isChecking = ref(false);
+  // Состояние "идёт проверка"
+  const isChecking = ref(false);
 
-// Массив для хранения ссылок на DOM-элементы
-const inputs = ref([]);
+  // Массив для хранения ссылок на DOM-элементы
+  const inputs = ref([]);
 
-// Вычисляем: все ли поля заполнены?
-const allFilled = computed(() => filled.value.every(Boolean));
-// Событие завершения ввода
-const emit = defineEmits(['complete']);
-// Обработчик ввода
-const handleInput = (e, index) => {
-  const input = e.target;
-  const value = input.value.replace(/\D/g, '');
-  input.value = value;
-  filled.value[index] = !!value;
+  // Вычисляем: все ли поля заполнены?
+  const allFilled = computed(() => filled.value.every(Boolean));
+  // Событие завершения ввода
+  const emit = defineEmits(['complete']);
+  // Обработчик ввода
+  const handleInput = (e, index) => {
+    const input = e.target;
+    const value = input.value.replace(/\D/g, '');
+    input.value = value;
+    filled.value[index] = !!value;
 
-  // Вперёд — если ввели цифру
-  if (value && index < 3) {
-    inputs.value[index + 1]?.focus();
-  }
+    // Вперёд — если ввели цифру
+    if (value && index < 3) {
+      inputs.value[index + 1]?.focus();
+    }
 
-  // Назад — если удалили и поле пустое
-  if (!value && index > 0) {
-    inputs.value[index - 1]?.focus();
-  }
-// Если все поля заполнены — включаем состояние проверки
-  if (allFilled.value) {
-    isChecking.value = true;
-    emit('complete'); // Отправляем событие
-    // Здесь можно вызвать API для проверки кода
-    // checkCode();
-  }
+    // Назад — если удалили и поле пустое
+    if (!value && index > 0) {
+      inputs.value[index - 1]?.focus();
+    }
+    // Если все поля заполнены — включаем состояние проверки
+    if (allFilled.value) {
+      isChecking.value = true;
+      emit('complete'); // Отправляем событие
+      // Здесь можно вызвать API для проверки кода
+      // checkCode();
+    }
 
-};
+  };
 </script>
 
 <template>
@@ -99,58 +99,61 @@ const handleInput = (e, index) => {
   </div>
 </template>
 <style lang="scss">
-@use '../../../css/abstractions/' as *;
+  @use '../../../css/abstractions/' as *;
 
-.input-sms-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  gap: $space-8;
+  .input-sms-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: $space-8;
 
-  .input-sms-label {
-    @include body-2;
-  }
-}
-
-.input-field {
-  display: flex;
-  flex-direction: row;
-  gap: $space-8;
-
-  input {
-    width: $space_40;
-    height: $space_40;
-    text-align: center;
-    @include head-2;
-    border-style: solid;
-    border-width: $width_default;
-    border-color: $color_textField_border_disabled;
-    background-color: $color_textField_surface;
-    border-radius: $radius_12;
-
-    &.filled {
-      border-color: $color_textField_border_primary_light;
+    .input-sms-label {
+      @include body-2;
     }
-    &.checking {
+  }
+
+  .input-field {
+    display: flex;
+    flex-direction: row;
+    gap: $space-8;
+
+    input {
+      width: $space_40;
+      height: $space_40;
+      text-align: center;
+      @include head-2;
+      border-style: solid;
+      border-width: $width_default;
       border-color: $color_textField_border_disabled;
-      background-color: $color_textField_border_disabled;
+      background-color: $color_textField_surface;
+      border-radius: $radius_12;
+
+      &.filled {
+        border-color: $color_textField_border_primary_light;
+      }
+
+      &.checking {
+        border-color: $color_textField_border_disabled;
+        background-color: $color_textField_border_disabled;
+      }
     }
   }
-}
 
-.sms-info-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  p{
-    @include  body-3;
-    color: $color_text_secondary;
+  .sms-info-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      @include body-3;
+      color: $color_text_gray;
+    }
+
+    .verification-process {
+      color: $color_text_black;
+    }
   }
-  .verification-process{
-    color: $color_text_black;
-  }
-}
 
 
 </style>

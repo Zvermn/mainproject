@@ -1,28 +1,28 @@
 <script setup>
-import CardComponent from '../../components/commons/CardComponent.vue';
-import InputSmsComponent from '../../components/form/inputs/InputSmsComponent.vue';
-import { ref, watch } from 'vue';
-import { useRouter } from 'vue-router';
+  import CardComponent from '../../components/commons/CardComponent.vue';
+  import InputSmsComponent from '../../components/form/inputs/InputSmsComponent.vue';
+  import { ref, watch } from 'vue';
+  import { useRouter } from 'vue-router';
 
-const router = useRouter();
-// Флаг: код введён полностью
-const isCodeFilled = ref(false);
+  const router = useRouter();
+  // Флаг: код введён полностью
+  const isCodeFilled = ref(false);
 
-// Таймер для отложенного перехода
-let timer = null;
+  // Таймер для отложенного перехода
+  let timer = null;
 
-// Отслеживаем заполнение кода
-watch(isCodeFilled, (newValue) => {
-  if (newValue) {
-    // Очищаем предыдущий таймер (на случай повторного ввода)
-    if (timer) clearTimeout(timer);
+  // Отслеживаем заполнение кода
+  watch(isCodeFilled, (newValue) => {
+    if (newValue) {
+      // Очищаем предыдущий таймер (на случай повторного ввода)
+      if (timer) clearTimeout(timer);
 
-    // Запускаем отсчёт 3 секунды
-    timer = setTimeout(() => {
-      router.push('/director/registration-steps/verification'); // или куда нужно
-    }, 1000);
-  }
-});
+      // Запускаем отсчёт 3 секунды
+      timer = setTimeout(() => {
+        router.push('/educator/registration-steps/profile'); // или куда нужно
+      }, 5000);
+    }
+  });
 
 
 

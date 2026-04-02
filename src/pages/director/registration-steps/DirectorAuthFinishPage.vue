@@ -1,24 +1,24 @@
 <script setup>
-import StepsComponent from 'src/components/buttons/StepsComponent.vue';
-import CardComponent from 'src/components/commons/CardComponent.vue';
-import TextInputComponent from 'src/components/form/inputs/TextInputComponent.vue';
-import ButtonComponent from 'src/components/buttons/ButtonComponent.vue';
-import ButtonSquareComponent from 'src/components/buttons/ButtonSquareComponent.vue';
+  import StepsComponent from 'src/components/buttons/StepsComponent.vue';
+  import CardComponent from 'src/components/commons/CardComponent.vue';
+  import TextInputComponent from 'src/components/form/inputs/TextInputComponent.vue';
+  import ButtonComponent from 'src/components/buttons/ButtonComponent.vue';
+  import ButtonSquareComponent from 'src/components/buttons/ButtonSquareComponent.vue';
 
-// Ссылка, которую нужно скопировать
-const referralLink = 'https://detstvo.ru/ref-487hgh7sA';
+  // Ссылка, которую нужно скопировать
+  const referralLink = 'https://detstvo.ru/ref-487hgh7sA';
 
-// Функция копирования
-const copyToClipboard = async () => {
-  try {
-    await navigator.clipboard.writeText(referralLink);
-    console.log('✅ Ссылка скопирована:', referralLink);
-    // Можно показать уведомление: "Скопировано!"
-  } catch (err) {
-    console.error('❌ Не удалось скопировать:', err);
-    alert('Не удалось скопировать ссылку');
-  }
-};
+  // Функция копирования
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(referralLink);
+      console.log('✅ Ссылка скопирована:', referralLink);
+      // Можно показать уведомление: "Скопировано!"
+    } catch (err) {
+      console.error('❌ Не удалось скопировать:', err);
+      alert('Не удалось скопировать ссылку');
+    }
+  };
 </script>
 <template>
   <steps-component :to-path="'/director/registration-steps/set-group-count'">
@@ -36,6 +36,7 @@ const copyToClipboard = async () => {
       </template>
     </card-component>
     <text-input-component
+    :icon-enable="true"
     :icon-color="'primary'"
     :icon-name="'copy'"
     :icon-size="'lg'"
@@ -68,37 +69,38 @@ const copyToClipboard = async () => {
 </template>
 
 <style lang="scss">
-@use "../../../css/abstractions/" as *;
+  @use "../../../css/abstractions/" as *;
 
-.card {
-  h2 {
-    margin-bottom: $space_8;
+  .card {
+    h2 {
+      margin-bottom: $space_8;
+    }
   }
-}
 
-.container-main-content {
-  margin: auto 0;
-  &>span:last-child {
-    @include caption-1;
+  .container-main-content {
+    margin: auto 0;
+
+    &>span:last-child {
+      @include caption-1;
+    }
   }
-}
 
-.input-field-wrap {
-  border-style: solid;
-  border-width: $width_default;
-  border-color: $color_primary_border;
-  box-shadow: 0 0 5px 0 $color_primary_shadow;
-}
-
-.copy-block {
-  display: flex;
-  flex-direction: row;
-  gap: $space-16;
-  align-items: center;
-
-  div {
-    flex-shrink: 0;
+  .input-field-wrap {
+    border-style: solid;
+    border-width: $width_default;
+    border-color: $color_primary_border;
+    box-shadow: 0 0 5px 0 $color_primary_shadow;
   }
-}
+
+  .copy-block {
+    display: flex;
+    flex-direction: row;
+    gap: $space-16;
+    align-items: center;
+
+    div {
+      flex-shrink: 0;
+    }
+  }
 
 </style>

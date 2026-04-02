@@ -4,7 +4,7 @@
   import LinearProgressComponent from '../indicators/LinearProgressComponent.vue';
   import { ref } from 'vue'
 
-  const fundEnabled = ref(false)
+  const fundEnabled = ref(true)
 </script>
 <template>
   <div class="fund-wrap">

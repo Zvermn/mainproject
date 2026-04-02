@@ -1,7 +1,9 @@
 <script setup>
-import StepsComponent from 'src/components/buttons/StepsComponent.vue';
-import ButtonComponent from 'src/components/buttons/ButtonComponent.vue';
-import TextInputComponent from 'src/components/form/inputs/TextInputComponent.vue';
+  import StepsComponent from 'src/components/buttons/StepsComponent.vue';
+  import ButtonComponent from 'src/components/buttons/ButtonComponent.vue';
+  import TextInputComponent from 'src/components/form/inputs/TextInputComponent.vue';
+  import { ref } from 'vue';
+  const groupCount = ref('');
 </script>
 <template>
   <steps-component :to-path="'/director/registration-steps/assistant-invite'">
@@ -15,11 +17,13 @@ import TextInputComponent from 'src/components/form/inputs/TextInputComponent.vu
       <span>Лидия</span>, сколько всего групп в вашем учреждении? Впишите ответ ниже:
     </p>
     <text-input-component
+        :icon-enable="true"
         :icon-size="'lg'"
         :icon-color="'primary'"
         :icon-name="'user-groups'"
         :type="'text'"
         :placeholder="'например 17'"
+        v-model="groupCount"
     />
   </div>
   <button-component
@@ -30,19 +34,22 @@ import TextInputComponent from 'src/components/form/inputs/TextInputComponent.vu
 
 </template>
 <style lang="scss" scoped>
-@use "../../../css/abstractions/" as *;
-    .set-group-block{
-      display: flex;
-      flex-direction: column;
-      gap: $space_16;
-      margin-top: auto;
-      margin-bottom: auto;
-      p{
-        @include label-2;
-      }
-      input {
-        @include body-2;
-      }
+  @use "../../../css/abstractions/" as *;
+
+  .set-group-block {
+    display: flex;
+    flex-direction: column;
+    gap: $space_16;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    p {
+      @include label-2;
     }
+
+    input {
+      @include body-2;
+    }
+  }
 
 </style>

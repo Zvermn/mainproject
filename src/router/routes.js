@@ -44,6 +44,16 @@ const routes = [
     component: () => import('layouts/director/DirectorHomeLayout.vue'),
     children: [{ path: '', component: () => import('pages/director/DirectorHomePage.vue') }],
   },
+  {
+    path: '/educator/registration-steps/profile',
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/educator/registration-steps/EducatorProfilePage.vue') }],
+  },
+  {
+    path: '/educator/registration-steps/set-group',
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/educator/registration-steps/EducatorSetGroupPage.vue') }],
+  },
 
   // Always leave this as last one,
   // but you can also remove it
