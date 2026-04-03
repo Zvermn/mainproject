@@ -1,10 +1,27 @@
 @use '../abstractions/' as *;
 
+// размеры кнопок
+.btn-lg {
+  min-height: 50px;
+  @include label-2;
+  padding: $space_4 $space_20 $space_4 $space_8;
+  gap: $space_10;
+
+  div {
+    flex-basis: 40px;
+  }
+}
+
+.btn-md {
+  min-height: 30px;
+  @include caption-1;
+  padding: $space_4 $space_20 $space_4 $space_8;
+  gap: 0;
+
+}
+
 .btn-primary {
   width: 100%;
-  padding: $space_4 $space_20;
-  @include label-2;
-  min-height: 50px;
   display: flex;
   flex-direction: row;
   gap: $space_20;
@@ -24,9 +41,7 @@
     background-color: $color_button_primary_hover;
   }
 
-  div {
-    flex-basis: 40px;
-  }
+
 
   a {
     color: inherit;
@@ -36,12 +51,8 @@
 
 .btn-secondary {
   width: 100%;
-  padding: $space_4 $space_20;
-  @include label-2;
-  min-height: 50px;
   display: flex;
   flex-direction: row;
-  gap: $space_20;
   justify-content: center;
   align-items: center;
 
@@ -73,36 +84,26 @@
 
   }
 
-  div {
-    flex-basis: 40px;
-  }
 }
 
 .btn-tetriary {
   width: 100%;
-  padding: $space_4 $space_20;
-  @include label-2;
-  min-height: 50px;
   display: flex;
   flex-direction: row;
-  gap: $space_20;
   justify-content: center;
   align-items: center;
-
+  padding: 0;
 
   background-color: transparent;
 
   color: $color_text_primary;
-
-  div {
-    flex-basis: 40px;
-  }
 
   a {
     color: inherit;
   }
 }
 
+// кнопка навигации
 
 .btn-nav {
   width: 50px;
@@ -117,9 +118,9 @@
 
   &:hover {
     background-color: $color_button_primary_hover;
-
   }
 }
+
 
 .btn-primary-sq {
   width: 50px;

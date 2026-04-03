@@ -98,7 +98,7 @@
     </div>
     <button-component class="btn-primary"
       :title="'Продолжить'"
-      :to-path="nameGroup ? '/educator/registration-steps/finish' : null"
+      :to-path="nameGroup ? '/educator/registration-steps/waiting-verification' : null"
       @click="isChecked = true"
     />
 
@@ -108,11 +108,7 @@
   @use "../../../css/abstractions/" as *;
 
 
-  .card {
-    & p:first-child {
-      margin-bottom: $space_12;
-    }
-  }
+
 
   .director-full-name {
     @include body-2b;

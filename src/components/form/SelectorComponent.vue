@@ -1,4 +1,5 @@
 <script setup>
+  import IconComponent from '../commons/IconComponent.vue';
   import { ref, computed } from 'vue';
 
   // Пропсы
@@ -27,6 +28,10 @@
       default: 20,
     },
     label: {
+      type: String,
+      default: '',
+    },
+    selectorId: {
       type: String,
       default: '',
     },
@@ -93,17 +98,24 @@
 </script>
 
 <template>
-  <div :id="selectorId" class="selector-wrapper">
+  <div  class="selector-wrapper">
     <label :for="selectorId">{{ props.label }}</label>
     <!-- Кликаемое поле -->
     <div
+      :id="selectorId"
       class="selector-field"
       :class="{ open: isOpen }"
       @click="toggleDropdown"
     >
       <span v-if="selectedLabel" class="selected">{{ selectedLabel }}</span>
       <span v-else class="placeholder">{{ placeholder }}</span>
-      <div class="arrow" :class="{ up: isOpen }"></div>
+      <icon-component
+        :class="{ up: isOpen }"
+        :size="'lg'"
+        :color="'dark'"
+        :icon-name="'arrow-down'"
+        class="arrow"
+      />
     </div>
 
     <!-- Список опций -->
@@ -141,7 +153,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: $space_4 $space_20;
+    padding: $space_4 $space_10 $space_4 $space_20;
     min-height: 50px;
     border: 1px solid $color_textField_border_primary_light;
     border-radius: $radius_12;
@@ -165,10 +177,6 @@
   }
 
   .arrow {
-    width: 12px;
-    height: 12px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23939393' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-    background-size: contain;
     transition: transform 0.2s;
 
     &.up {

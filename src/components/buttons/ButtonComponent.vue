@@ -1,53 +1,63 @@
 <script setup>
-import { useRouter } from 'vue-router'
-import IconComponent from '../commons/IconComponent.vue'
-// Кнопка работает в двух режимах: роутер, если указали ссылку (:toPath), и по событию, если указали @click
-const router = useRouter();
+  import { useRouter } from 'vue-router'
+  import IconComponent from '../commons/IconComponent.vue'
+  // Кнопка работает в двух режимах: роутер, если указали ссылку (:toPath), и по событию, если указали @click
+  const router = useRouter();
 
-const props = defineProps({
-  iconPosition: {
-    type: String,
-    required: false,
-    default: null,
-  },
-  title: {
-    type: String,
-    required: false,
-    default: 'Нажми',
-  },
-  toPath: {
-    type: String,
-    required: false,
-    default: null,
-  },
-  iconColor: {
-    type: String,
-    default: '',
-    required: false,
-  },
-  iconName: {
-    type: String,
-    default: '',
-    required: false,
-  },
+  const props = defineProps({
+    iconPosition: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    title: {
+      type: String,
+      required: false,
+      default: 'Нажми',
+    },
+    toPath: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    iconColor: {
+      type: String,
+      default: '',
+      required: false,
+    },
+    iconName: {
+      type: String,
+      default: '',
+      required: false,
+    },
+    iconSize: {
+      type: String,
+      default: 'lg',
+      required: false,
+    },
+    btnSize: {
+      type: String,
+      default: 'btn-lg',
+      required: false,
+    },
 
-});
+  });
 
-function redirect() {
-  if (props.toPath) {
-    router.push({
-      path: props.toPath,
-    });
-  }
-};
+  function redirect() {
+    if (props.toPath) {
+      router.push({
+        path: props.toPath,
+      });
+    }
+  };
 </script>
 
 <template>
-  <button @click="redirect()">
+  <button @click="redirect()" :class="btnSize">
     <div v-if="props.iconPosition">
       <icon-component
         v-if="props.iconPosition =='left'"
-        :size="'lg'"
+        :size="iconSize"
         :color="props.iconColor"
         :icon-name="props.iconName"
       />
@@ -64,7 +74,4 @@ function redirect() {
   </button>
 </template>
 
-<style lang="scss">
-
-
-</style>
+<style lang="scss"></style>

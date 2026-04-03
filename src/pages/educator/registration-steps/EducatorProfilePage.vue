@@ -66,11 +66,11 @@
     gap: $space_8;
   }
 
-  .card {
-    & p:first-child {
-      margin-bottom: $space_12;
-    }
-  }
+  // .card {
+  //   & p:first-child {
+  //     margin-bottom: $space_12;
+  //   }
+  // }
 
   .director-full-name {
     @include body-2b;

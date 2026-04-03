@@ -1,4 +1,8 @@
+@use './brown-theme' as *;
+@use './primitives' as *;
+@use './brown-theme' as *;
 @use './variables' as *;
+
 
 // Главный заголовок экрана
 @mixin head-1 {
@@ -6,6 +10,7 @@
   font-size: 24px;
   line-height: 1;
   font-weight: bold;
+  color: $color_text_black;
 }
 
 // Заголовки секций
@@ -14,7 +19,7 @@
   font-size: 20px;
   line-height: 1.2;
   font-weight: bold;
-
+  color: $color_text_black;
 }
 
 // Основной наборный текст
@@ -22,6 +27,8 @@
   font-family: $heading-2;
   font-size: 16px;
   font-weight: normal;
+  color: $color_text_black;
+
 }
 
 // Жирный основной наборный текст
@@ -29,6 +36,8 @@
   font-family: $heading-2;
   font-size: 16px;
   font-weight: bold;
+  color: $color_text_black;
+
 }
 
 // Второстепенный текст, подсказки
@@ -36,6 +45,8 @@
   font-family: $heading-2;
   font-size: 14px;
   font-weight: 500;
+  color: $color_text_black;
+
 }
 
 // Жирный второстепенный текст, подсказки
@@ -43,6 +54,8 @@
   font-family: $heading-2;
   font-size: 14px;
   font-weight: bold;
+  color: $color_text_black;
+
 }
 
 // Кнопки, инпуты, описание
@@ -50,12 +63,16 @@
   font-family: $heading-2;
   font-size: 20px;
   font-weight: 600;
+  color: $color_text_black;
+
 }
 
 @mixin label-2 {
   font-family: $heading-1;
   font-size: 18px;
   font-weight: 500;
+  color: $color_text_black;
+
 }
 
 // Мелкий текст, подписи
@@ -63,6 +80,7 @@
   font-family: $heading-2;
   font-size: 13px;
   font-weight: normal;
+  color: $color_text_gray;
 }
 
 // Жирный мелкий текст, подписи
@@ -70,6 +88,8 @@
   font-family: $heading-2;
   font-size: 12px;
   font-weight: 800;
+  color: $color_text_black;
+
 }
 
 // Мелкий текст, подписи
@@ -77,4 +97,6 @@
   font-family: $heading-2;
   font-size: 11px;
   font-weight: normal;
+  color: $color_text_gray;
+
 }

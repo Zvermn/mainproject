@@ -16,15 +16,36 @@
 }
 
 .icon-block-size-sm {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   background-repeat: no-repeat;
   background-color: transparent;
 }
 
+// Цветные иконки групп
+.icon-group-container {
+  width: 60px;
+  position: relative;
+  flex-shrink: 0;
+
+  .icon-groupe {
+    position: absolute;
+    width: 111px;
+    height: 102px;
+    rotate: 0.95turn;
+    top: -60px;
+    left: -42px;
+  }
+
+}
 
 
-//цвет для иконок
+.nursery {
+  background-image: url(../../assets/icons/groups/nursery.svg);
+  background-size: contain;
+}
+
+// junior middle senior preparatory //цвет для иконок
 
 .bg-icon-primary {
   background-color: $color_icon_primary;
@@ -50,6 +71,10 @@
   background-color: $color_icon_error;
 }
 
+.bg-icon-link {
+  background-color: $color_icon_link;
+}
+
 // Фон иконки
 
 .backing {
@@ -62,7 +87,7 @@
   }
 }
 
-
+// цвет фона
 .bg-icon-surface {
   background-color: $color_icon_surface;
 }
@@ -239,4 +264,48 @@
 
 .icon-calendar-md {
   mask: url(../../assets/icons/medium/Calendar.svg);
+}
+
+.icon-coffee-lg {
+  mask: url(../../assets/icons/large/Coffee.svg);
+}
+
+.icon-coffee-md {
+  mask: url(../../assets/icons/medium/Coffee.svg);
+}
+
+.icon-arrows-reload-lg {
+  mask: url(../../assets/icons/large/Arrows_Reload_01.svg);
+}
+
+.icon-arrows-reload-md {
+  mask: url(../../assets/icons/medium/Arrows_Reload_01.svg);
+}
+
+.icon-add-plus-lg {
+  mask: url(../../assets/icons/large/Add_Plus_Circle.svg);
+}
+
+.icon-add-plus-md {
+  mask: url(../../assets/icons/medium/Add_Plus_Circle.svg);
+}
+
+.icon-user-lg {
+  mask: url(../../assets/icons/large/User_03.svg);
+}
+
+.icon-user-md {
+  mask: url(../../assets/icons/medium/User_03.svg);
+}
+
+.icon-health-sm {
+  background-image: url(../../assets/icons/small/Health.svg);
+}
+
+.icon-arrow-down-lg {
+  mask: url(../../assets/icons/large/ArrowDown.svg);
+}
+
+.icon-arrow-down-md {
+  mask: url(../../assets/icons/medium/ArrowDown.svg);
 }
