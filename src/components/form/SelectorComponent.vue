@@ -102,12 +102,13 @@
     <label :for="selectorId">{{ props.label }}</label>
     <!-- Кликаемое поле -->
     <div
+
       :id="selectorId"
       class="selector-field"
       :class="{ open: isOpen }"
       @click="toggleDropdown"
     >
-      <span v-if="selectedLabel" class="selected">{{ selectedLabel }}</span>
+      <span v-if="selectedLabel" v-bind="$attrs" class="selected">{{ selectedLabel }}</span>
       <span v-else class="placeholder">{{ placeholder }}</span>
       <icon-component
         :class="{ up: isOpen }"

@@ -91,7 +91,11 @@
 <template>
   <div class="input-wrap">
     <label :for="inputId">{{ props.label }}</label>
-    <div :class="{filled: modelValue.length != 0, error: invalidInput}" class="input-field-wrap">
+    <div
+      v-bind="$attrs"
+      :class="{filled: modelValue.length != 0,
+      error: invalidInput}"
+      class="input-field-wrap">
       <icon-component v-if="iconEnable"
         :size="props.iconSize"
         :color="props.iconColor"
@@ -139,11 +143,11 @@
     border-width: $width_default;
     border-style: solid;
     border-color: $color_primary_border_light;
+    @include body-2;
 
     input {
       width: 100%;
       border: 0;
-      @include body-2;
     }
   }
 

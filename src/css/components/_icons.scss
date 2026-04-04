@@ -92,6 +92,21 @@
   background-color: $color_icon_surface;
 }
 
+// иконки через background
+.icon-health-sm {
+  background-image: url(../../assets/icons/small/Health.svg);
+}
+
+.img-Areyousure {
+  background-image: url(../../assets/images/AreYouSure\ 1.svg);
+  width: 64px;
+  height: 116px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+
 //иконки парное обозначение (большая, маленькая)
 
 .icon-arrow-left-lg {
@@ -108,6 +123,10 @@
 
 .icon-arrow-right-md {
   mask: url(../../assets/icons/medium/ArrowRight.svg);
+}
+
+.icon-arrow-right-sm {
+  mask: url(../../assets/icons/small/Arrow_Right.svg);
 }
 
 .icon-phone-lg {
@@ -298,9 +317,7 @@
   mask: url(../../assets/icons/medium/User_03.svg);
 }
 
-.icon-health-sm {
-  background-image: url(../../assets/icons/small/Health.svg);
-}
+
 
 .icon-arrow-down-lg {
   mask: url(../../assets/icons/large/ArrowDown.svg);

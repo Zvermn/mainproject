@@ -15,7 +15,7 @@ html {
   gap: $space_main_content;
   margin: 0 auto;
   background-color: $color_background;
-
+  position: relative;
   overflow: auto;
   scrollbar-width: none;
 }
