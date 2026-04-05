@@ -1,6 +1,19 @@
 <script setup>
-import LinearProgressComponent from '../indicators/LinearProgressComponent.vue';
-import IconComponent from './IconComponent.vue';
+  import LinearProgressComponent from '../indicators/LinearProgressComponent.vue';
+  import IconComponent from './IconComponent.vue';
+
+  defineProps({
+    headerFullName: {
+      type: String,
+      default: '',
+    },
+    headerPost: {
+      type: String,
+      default: 'Заведующая',
+    },
+  });
+
+
 </script>
 <template>
   <header class="director-header">
@@ -12,8 +25,8 @@ import IconComponent from './IconComponent.vue';
     </div>
     <div class="header-info-profile">
       <div class="info-profile-data">
-        <span class="post">Заведующая</span>
-        <h2 class="full-name">Иванова Лидия</h2>
+        <span class="post">{{ post }}</span>
+        <h2 class="full-name">{{ headerFullName }}</h2>
       </div>
       <div class="info-profile-notifications">
         <icon-component
@@ -27,33 +40,35 @@ import IconComponent from './IconComponent.vue';
 </template>
 
 <style lang="scss">
-@use "../../css/abstractions/" as *;
+  @use "../../css/abstractions/" as *;
 
-.director-header {
-  display: flex;
-  flex-direction: column;
-  gap: $space_8;
-  .header-info-progress span {
-    @include caption-2;
-    color: $color_text_primary;
-  }
-
-  .header-info-profile {
+  .director-header {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: $space_16;
-    .post {
-      @include caption-1;
+    flex-direction: column;
+    gap: $space_8;
+
+    .header-info-progress span {
+      @include caption-2;
       color: $color_text_primary;
-      text-transform: uppercase;
     }
 
-    .info-profile-notifications {
-      flex-shrink: 0;
+    .header-info-profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: $space_16;
+
+      .post {
+        @include caption-1;
+        color: $color_text_primary;
+        text-transform: uppercase;
+      }
+
+      .info-profile-notifications {
+        flex-shrink: 0;
+      }
     }
   }
-}
 
 </style>

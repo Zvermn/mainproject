@@ -1,7 +1,8 @@
 <script setup>
   import ErrorHintComponent from '../ErrorHintComponent.vue';
-  import { ref, computed } from 'vue';
-
+  import { ref, computed, onMounted, onUnmounted } from 'vue';
+  // ошибка ввода кода
+  const inCorrectCode = ref(false);
   // Массив состояний заполненности
   const filled = ref([false, false, false, false]);
 
@@ -10,6 +11,10 @@
 
   // Массив для хранения ссылок на DOM-элементы
   const inputs = ref([]);
+
+  // Обратный отсчёт: начнётся при allFilled
+  const timeLeft = ref(10);
+  let timer = null;
 
   // Вычисляем: все ли поля заполнены?
   const allFilled = computed(() => filled.value.every(Boolean));
@@ -35,11 +40,36 @@
     if (allFilled.value) {
       isChecking.value = true;
       emit('complete'); // Отправляем событие
-      // Здесь можно вызвать API для проверки кода
-      // checkCode();
     }
-
   };
+
+  // ✅ Функция запуска таймера
+  const startTimer = () => {
+    // Очищаем предыдущий таймер
+    if (timer) clearInterval(timer);
+
+    timeLeft.value = 10; // Сброс
+
+    timer = setInterval(() => {
+      timeLeft.value -= 1;
+      console.log('Осталось до повторной отправки:', timeLeft.value);
+
+      if (timeLeft.value <= 0) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }, 1000);
+  };
+
+  // Запускаем при монтировании
+  onMounted(() => {
+    startTimer();
+  });
+
+  // Очистка при уничтожении
+  onUnmounted(() => {
+    if (timer) clearInterval(timer);
+  });
 </script>
 
 <template>
@@ -76,11 +106,11 @@
       />
     </div>
     <div class="sms-info-block">
-      <p v-if="!allFilled">Код можно запросить повторно через <span>30 </span>
-        <span>секунд</span>
+      <p v-if="timeLeft > 0 && !allFilled" class="timer">Код можно запросить повторно через <span>{{ timeLeft }} </span>
+        <span> сек.</span>
       </p>
       <ErrorHintComponent
-        v-if="allFilled"
+        v-if="inCorrectCode"
         :msg="'Код введен неверно. Попробуйте ещё раз'"
       />
       <p v-if="allFilled" class="verification-process">
@@ -94,7 +124,7 @@
           class="animate"
         >
       </div>
-      <p>Код не пришел? <router-Link :to="'/'">Отправить ещё раз</router-Link></p>
+      <p v-if="timeLeft == 0 && !allFilled">Код не пришел? <router-link to="#" @click="startTimer">Отправить ещё раз</router-link></p>
   </div>
   </div>
 </template>
@@ -155,5 +185,8 @@
     }
   }
 
+  .timer {
+    font-variant-numeric: tabular-nums;
+  }
 
 </style>

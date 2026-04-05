@@ -46,7 +46,6 @@
   .calendar-wrap {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     gap: $space_8;
 

@@ -19,6 +19,11 @@
       default: '',
       required: false,
     },
+    educatorSurname: {
+      type: String,
+      default: '',
+      required: false,
+    },
     educatorTel: {
       type: String,
       default: '',
@@ -81,6 +86,7 @@
                   :backing-type="'square'"
                 />
                 <span class="educator-name">{{educatorName}}</span>
+                <span class="educator-surname">{{educatorSurname}}</span>
               </div>
               <div class="educator-info-item">
                 <icon-component

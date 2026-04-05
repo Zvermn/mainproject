@@ -1,11 +1,11 @@
 <script setup>
-import CardComponent from '../../../components/commons/CardComponent.vue';
-import StepsComponent from '../../../components/buttons/StepsComponent.vue';
-import ButtonComponent from '../../../components/buttons/ButtonComponent.vue';
+  import CardComponent from '../../../components/commons/CardComponent.vue';
+  import StepsComponent from '../../../components/buttons/StepsComponent.vue';
+  import ButtonComponent from '../../../components/buttons/ButtonComponent.vue';
 </script>
 
 <template>
-  <steps-component :to-path="'/auth/phone'">
+  <steps-component :to-path="'/auth/login'">
     <template #step-content>
       <h2>Вход в систему</h2>
       <span>Шаг </span><span>1 </span><span>из </span><span>3</span>
@@ -40,19 +40,22 @@ import ButtonComponent from '../../../components/buttons/ButtonComponent.vue';
 </template>
 
 <style lang="scss">
-@use '../../../css/abstractions/' as *;
-.card{
-  p{
-    margin-bottom: $space-16;
-    @include body-2;
+  @use '../../../css/abstractions/' as *;
+
+  .card {
+    p {
+      margin-bottom: $space-16;
+      @include body-2;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .director-full-name {
+      @include body-2b;
+    }
   }
-  p:last-child{
-    margin-bottom: 0;
-  }
-.director-full-name{
-  @include body-2b;
-}
-}
 
 </style>
 

@@ -15,7 +15,7 @@
 
 </script>
 <template>
-    <steps-component :to-path="'/auth/phone'">
+    <steps-component :to-path="'/auth/login'">
         <template #step-content>
           <h2>Знакомство</h2>
           <span>Шаг </span><span>2 </span><span>из </span><span>3</span>

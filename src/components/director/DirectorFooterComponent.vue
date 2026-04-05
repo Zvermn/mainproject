@@ -39,6 +39,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: auto;
 
     .footer-item {
       background-color: transparent;

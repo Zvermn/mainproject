@@ -5,12 +5,12 @@ const routes = [
     children: [{ path: '', component: () => import('pages/WelcomePage.vue') }],
   },
   {
-    path: '/auth/phone',
+    path: '/auth/login',
     component: () => import('layouts/commons/LogoLayout.vue'),
-    children: [{ path: '', component: () => import('pages/auth/AuthPhonePage.vue') }],
+    children: [{ path: '', component: () => import('pages/auth/AuthLoginPage.vue') }],
   },
   {
-    path: '/auth-sms',
+    path: '/auth/sms',
     component: () => import('layouts/commons/LogoSmsLayout.vue'),
     children: [{ path: '', component: () => import('pages/auth/AuthSmsPage.vue') }],
   },
@@ -63,6 +63,11 @@ const routes = [
     path: '/educator/registration-steps/group/edit',
     component: () => import('layouts/commons/EmptyLayout.vue'),
     children: [{ path: '', component: () => import('pages/educator/registration-steps/EducatorGroupEditPage.vue') }],
+  },
+  {
+    path: '/educator/home',
+    component: () => import('layouts/educator/EducatorHomeLayout.vue'),
+    children: [{ path: '', component: () => import('pages/educator/EducatorHomePage.vue') }],
   },
 
   // Always leave this as last one,

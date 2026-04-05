@@ -1,26 +1,36 @@
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+  import { ref, watch } from 'vue'
+  import { useRouter } from 'vue-router'
 
 
-import PhoneInputComponent from '../../components/form/inputs/PhoneInputComponent.vue'
-import CheckboxComponent from '../../components/form/CheckboxComponent.vue'
-import ButtonComponent from '../../components/buttons/ButtonComponent.vue'
-import CardComponent from '../../components/commons/CardComponent.vue'
+  import PhoneInputComponent from '../../components/form/inputs/PhoneInputComponent.vue'
+  import CheckboxComponent from '../../components/form/CheckboxComponent.vue'
+  import ButtonComponent from '../../components/buttons/ButtonComponent.vue'
+  import CardComponent from '../../components/commons/CardComponent.vue'
+  const phoneNumber = ref('');
+  const router = useRouter();
+  const isNotApproved = ref(false);
+  const inputStatus = ref(false);
+  const isCheckedPolicy = ref(false);
+  const checkApproval = () => {
+    if (isCheckedPolicy.value) {
+      if (phoneNumber.value.length === 11) {
+        router.push('/auth/sms');
+      } else {
+        inputStatus.value = true;
+        console.log('телефон не введен ' + inputStatus.value);
+      }
+    } else {
+      isNotApproved.value = true;
+    }
+  };
+  watch(phoneNumber, (newVal) => {
+    if (newVal.length > 0) {
+      inputStatus.value = false;
+    }
+  });
 
-const router = useRouter();
-const isNotApproved = ref(false);
 
-const isCheckedPolicy = ref(false);
-const checkApproval = () => {
-  if (isCheckedPolicy.value) {
-    router.push('/auth-sms');
-  } else {
-    isNotApproved.value = true;
-  }
-};
-
-const phoneNumber = ref('');
 </script>
 
 <template>
@@ -31,7 +41,10 @@ const phoneNumber = ref('');
     :icon-color="'primary'"
     :icon-name="'phone'"
     :icon-size="'lg'"
-    />
+    :incorrect-input="inputStatus"
+    >
+  </phone-input-component>
+
   <checkbox-component
     v-if="!isNotApproved"
     :model-value="isCheckedPolicy"
@@ -57,7 +70,7 @@ const phoneNumber = ref('');
     v-if="isNotApproved"
     :icon-position="'right'"
     :title="'Хорошо, продолжить'"
-    :to-path="'/auth/phone'"
+    :to-path="'/auth/login'"
     :icon-color="'light'"
     :icon-name="'arrow-right'"
     class="btn-primary"
@@ -67,10 +80,17 @@ const phoneNumber = ref('');
     v-if="isNotApproved"
     :title="'Отменить регистрацию'"
     :to-path="'/'"
-    class="btn-secondary"
+    class="btn-secondary destructive"
   />
-  <p v-if="isNotApproved" class="caption-1 text-centr">
+  <p v-if="isNotApproved" class="personal-information-msg text-centr">
     Мы обеспечиваем полное соответствие <router-link :to="'/'">ФЗ-152 </router-link>и гарантируем защиту личных данных
   </p>
 </template>
 
+<style lang="scss">
+  @use '../../css/abstractions/' as *;
+
+  .personal-information-msg {
+    @include caption-1;
+  }
+</style>

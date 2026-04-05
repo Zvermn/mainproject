@@ -1,51 +1,58 @@
 <script setup>
-import ErrorHintComponent from '../ErrorHintComponent.vue'
-import IconComponent from '../../commons/IconComponent.vue'
-import { ref } from 'vue'
+  import ErrorHintComponent from '../ErrorHintComponent.vue'
+  import IconComponent from '../../commons/IconComponent.vue'
 
 
-const props = defineProps({
-  label: {
-    type: String,
-    default: 'Введите номер телефона',
-    required: false,
-  },
+  const props = defineProps({
+    label: {
+      type: String,
+      default: 'Введите номер телефона',
+      required: false,
+    },
     iconColor: {
-    type: String,
-    default: '',
-    required: false,
-  },
-  iconName: {
-    type: String,
-    default: '',
-    required: false,
-  },
-  iconSize: {
-    type: String,
-    default: '',
-    required: false,
-  },
-  modelValue: {
-    type: String,
-    default: '',
-    required: false,
-  },
-})
+      type: String,
+      default: '',
+      required: false,
+    },
+    iconName: {
+      type: String,
+      default: '',
+      required: false,
+    },
+    iconSize: {
+      type: String,
+      default: '',
+      required: false,
+    },
+    modelValue: {
+      type: String,
+      default: '',
+      required: false,
+    },
+    incorrectInput: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
+  })
 
-let errorPhone = ref(false);
-let errorMsg = ref(false);
-const emit = defineEmits(['update:modelValue']);
-const updateValue = (event) => {
-  emit('update:modelValue', event.target.value);
-};
+  // let errorPhone = ref(false);
+  // let errorMsg = ref(false);
+  const emit = defineEmits(['update:modelValue']);
+  const updateValue = (event) => {
+    emit('update:modelValue', event.target.value);
+  };
+
+
 </script>
 
 <template>
+
   <div class="input-wrap">
     <label for="login-phone">{{ props.label }}</label>
     <div
       :class="{
-        error: errorPhone,
+        error: incorrectInput,
         correct: modelValue.length === 11,
         filled: modelValue.length != 0 && modelValue.length <= 10
       }"
@@ -64,7 +71,7 @@ const updateValue = (event) => {
         :value="modelValue"
         @input="updateValue"
       />
-      <icon-component v-if="errorPhone"
+      <icon-component v-if="incorrectInput"
         :size="'lg'"
         :color="'error'"
         :icon-name="'circle-warning'"
@@ -75,48 +82,50 @@ const updateValue = (event) => {
         :icon-name="'check-big'"
       />
     </div>
-    <error-hint-component v-if="errorMsg" :msg="'Ведите номер телефона чтобы продолжить'" />
+    <error-hint-component v-if="incorrectInput" :msg="'Ведите номер телефона чтобы продолжить'" />
   </div>
 </template>
 
 <style lang="scss">
-@use '../../../css/abstractions/' as *;
+  @use '../../../css/abstractions/' as *;
 
-.input-wrap {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 6px;
-  label {
-    @include body-3b;
-  }
-}
-
-.input-field-wrap {
-  padding: $space_4 $space_10;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  background-color: $color_textField_surface;
-  border-radius: $radius_12;
-  border-width: $width_default;
-  border-style: solid;
-  border-color: $color_primary_border_light;
-  input {
+  .input-wrap {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    border: 0;
-    @include body-2;
-  }
-}
+    gap: 6px;
 
-.input-field-wrap{
-  div {
-    align-self: center;
-    flex-shrink: 0;
+    label {
+      @include body-3b;
+    }
   }
-}
 
-.correct.input-field-wrap {
+  .input-field-wrap {
+    padding: $space_4 $space_10;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: $color_textField_surface;
+    border-radius: $radius_12;
+    border-width: $width_default;
+    border-style: solid;
+    border-color: $color_primary_border_light;
+
+    input {
+      width: 100%;
+      border: 0;
+      @include body-2;
+    }
+  }
+
+  .input-field-wrap {
+    div {
+      align-self: center;
+      flex-shrink: 0;
+    }
+  }
+
+  .correct.input-field-wrap {
     border-color: $color_success_border;
     border-width: $width_default;
   }
@@ -126,8 +135,8 @@ const updateValue = (event) => {
     border-color: $color_textField_border_primary;
   }
 
-.error.input-field-wrap {
-  border-color: $color_error_border;
+  .error.input-field-wrap {
+    border-color: $color_error_border;
     border-width: $width_md;
   }
 

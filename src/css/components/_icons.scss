@@ -107,7 +107,7 @@
 
 
 
-//иконки парное обозначение (большая, маленькая)
+//иконки парное обозначение (большая, средняя, маленькая)
 
 .icon-arrow-left-lg {
   mask: url(../../assets/icons/large/ArrowLeft.svg);
@@ -325,4 +325,20 @@
 
 .icon-arrow-down-md {
   mask: url(../../assets/icons/medium/ArrowDown.svg);
+}
+
+.icon-user-groups-sm {
+  mask: url(../../assets/icons/small/Users_Group.svg);
+}
+
+.icon-calendar-event-lg {
+  mask: url(../../assets/icons/large/Calendar_Event.svg);
+}
+
+.icon-calendar-event-md {
+  mask: url(../../assets/icons/medium/Calendar_Event.svg);
+}
+
+.icon-calendar-event-sm {
+  mask: url(../../assets/icons/small/Calendar_Event.svg);
 }
