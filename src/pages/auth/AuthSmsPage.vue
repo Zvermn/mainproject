@@ -19,7 +19,7 @@
 
       // Запускаем отсчёт 3 секунды
       timer = setTimeout(() => {
-        router.push('/educator/registration-steps/profile'); // или куда нужно
+        router.push('/director/registration-steps/verification'); // или куда нужно
       }, 5000);
     }
   });

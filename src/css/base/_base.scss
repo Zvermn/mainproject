@@ -32,8 +32,10 @@ html {
 }
 
 a {
+  @include body-3;
   color: $color_text_link;
 }
+
 
 h1 {
   @include head-1

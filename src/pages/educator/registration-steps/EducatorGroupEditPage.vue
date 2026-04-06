@@ -291,6 +291,12 @@
   :deep(.input-field-wrap.modified) {
     @include body-2b;
     color: $color_text_primary;
+
+    input {
+      @include body-2b;
+      color: $color_text_primary;
+
+    }
   }
 
   .change-msg {

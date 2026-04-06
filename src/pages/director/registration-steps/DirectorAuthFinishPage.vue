@@ -6,7 +6,7 @@
   import ButtonSquareComponent from 'src/components/buttons/ButtonSquareComponent.vue';
 
   // Ссылка, которую нужно скопировать
-  const referralLink = 'https://detstvo.ru/ref-487hgh7sA';
+  const referralLink = '/educator/registration-steps/profile';
 
   // Функция копирования
   const copyToClipboard = async () => {

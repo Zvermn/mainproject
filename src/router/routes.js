@@ -69,6 +69,16 @@ const routes = [
     component: () => import('layouts/educator/EducatorHomeLayout.vue'),
     children: [{ path: '', component: () => import('pages/educator/EducatorHomePage.vue') }],
   },
+  {
+    path: '/Welcome/parent',
+    component: () => import('layouts/commons/LogoLayout.vue'),
+    children: [{ path: '', component: () => import('pages/WelcomeParentPage.vue') }],
+  },
+  {
+    path: '/auth/login/parent',
+    component: () => import('layouts/commons/EmptyLayout.vue'),
+    children: [{ path: '', component: () => import('pages/auth/AuthLoginParentPage.vue') }],
+  },
 
   // Always leave this as last one,
   // but you can also remove it
